@@ -1,0 +1,24 @@
+a:link,
+a:visited,
+a:hover,
+a:active {
+	text-decoration: none;
+	transition: all 0.3s;
+}
+a:link,
+a:visited {
+	color: $color-default;
+}
+a:hover,
+a:active {
+	color: $color-blue;
+}
+
+a.link-green:link,
+a.link-green:visited {
+	color: $color-green-for-text;
+}
+a.link-green:hover,
+a.link-green:active {
+	color: darken($color-green-for-text, 10%);
+}

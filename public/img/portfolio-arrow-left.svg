@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="609.333px" height="609.333px" viewBox="1.333 91.333 609.333 609.333"
+	 enable-background="new 1.333 91.333 609.333 609.333" xml:space="preserve">
+	<circle id="circle_border" fill="#666666" cx="306" cy="396" r="304.667"/>
+	<circle id="circle_bg" fill="#FFFFFF" cx="306" cy="396" r="287.167"/>
+	<path id="arrow" fill="#666666" d="M366.008,501.693c3.128-2.638,3.526-7.311,0.888-10.439c-0.27-0.321-0.567-0.618-0.888-0.888
+		l-111.91-99.627l111.91-99.767c3.128-2.638,3.526-7.311,0.888-10.439c-0.27-0.321-0.567-0.618-0.888-0.888
+		c-3.658-3.123-9.044-3.123-12.702,0l-118.03,105.221c-1.665,1.409-2.627,3.478-2.631,5.658c0.04,2.176,0.995,4.234,2.631,5.669
+		l118.03,105.221C356.86,504.706,362.313,504.826,366.008,501.693z"/>
+	<circle id="circle_for_hover" fill="#FFFFFF" fill-opacity="0" cx="306" cy="396" r="304.667"/>
+
+	<animate xlink:href="#circle_border" attributeType="CSS" attributeName="fill" to="#00b1ff" dur="0.3s" fill="freeze" begin="circle_for_hover.mouseover" />
+	<animate xlink:href="#circle_bg" attributeType="CSS" attributeName="fill" to="#00b1ff" dur="0.3s" fill="freeze" begin="circle_for_hover.mouseover" />
+	<animate xlink:href="#arrow" attributeType="CSS" attributeName="fill" to="#ffffff" dur="0.3s" fill="freeze" begin="circle_for_hover.mouseover" />
+
+	<animate xlink:href="#circle_border" attributeType="CSS" attributeName="fill" to="#666666" dur="0.3s" fill="freeze" begin="circle_for_hover.mouseout" />
+	<animate xlink:href="#circle_bg" attributeType="CSS" attributeName="fill" to="#ffffff" dur="0.3s" fill="freeze" begin="circle_for_hover.mouseout" />
+	<animate xlink:href="#arrow" attributeType="CSS" attributeName="fill" to="#666666" dur="0.3s" fill="freeze" begin="circle_for_hover.mouseout" />
+</svg>

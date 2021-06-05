@@ -1,0 +1,30 @@
+@import "./variable";
+@import "./reset";
+@import "./global";
+
+@import "./pages/front";
+@import "./pages/portfolio";
+@import "./pages/about";
+@import "./pages/contact";
+
+@import "./components/header";
+@import "./components/hamburger";
+@import "./components/loading";
+@import "./components/scroll-down";
+@import "./components/morph";
+@import "./components/link";
+@import "./components/button";
+@import "./components/form";
+@import "./components/close-button";
+@import "./components/social-lists";
+
+/**
+ * Layout index
+ *
+ * 1: Morph, Content
+ * 2: Other container
+ * 3: Button navigation page
+ * 4: MorphMenu
+ * 5: Menu, Burger
+ * 6: Loading
+ */

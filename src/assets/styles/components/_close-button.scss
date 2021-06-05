@@ -1,0 +1,31 @@
+.close-button {
+	position: absolute;
+	top: 70px;
+	left: 50%;
+	margin-left: -27.5px;
+	cursor: pointer;
+
+	@media (max-width: $mobile-break-point) {
+		top: 40px;
+	}
+
+	> * {
+		vertical-align: middle;
+	}
+	svg {
+		width: 55px;
+		height: 55px;
+		box-shadow: 0 0 15px 0 rgba(0,0,0,0.16);
+		border-radius: 50%;
+		> * {
+			transition: fill 0.5s;
+		}		
+	}
+
+	&:hover .close-button-bg {
+		fill: $color-blue;		
+	}
+	&:hover .close-button-icon {
+		fill: #ffffff;
+	}
+}

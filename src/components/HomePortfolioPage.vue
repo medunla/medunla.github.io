@@ -1,0 +1,67 @@
+<template>
+	<div
+		:style="cssWindowSize"
+		class="portfolio-list-page full-page"
+	>
+		<div
+			v-swiper:portfolioSwiper="swiperOptions"
+			class="portfolio-lists"
+			@slide-change="handlePortfolioSwiperSlideChange"
+		>
+			<div class="swiper-wrapper">
+				<div
+					v-for="portfolio in portfolioData"
+					:key="portfolio.id"
+					class="swiper-slide portfolio-list"
+				>
+					<h2>{{ portfolio.name }}</h2>
+				</div>
+			</div>
+		</div>
+
+		<!-- arrow -->
+		<img
+			:class="['portfolio-list-arrow-up', {
+				disabled: isArrowUpDisabled
+			}]"
+			src="/img/arrow-up.svg"
+			alt="Arrow Up"
+		>
+		<img
+			:class="['portfolio-list-arrow-down', {
+				disabled: isArrowDownDisabled
+			}]"
+			src="/img/arrow-down.svg"
+			alt="Arrow Down"
+		>
+		<!-- end arrow -->
+	</div>
+</template>
+
+<script>
+import portfolioData from "../assets/js/portfolioData";
+
+export default {
+	name: "HomePortfolioPage",
+	data() {
+		return {
+			portfolioData,
+			swiperOptions: {
+				direction: "vertical",
+				mousewheel: true,
+				keyboard: true,
+				slidesPerView: "auto",
+				nested: true
+			},
+			isArrowUpDisabled: true,
+			isArrowDownDisabled: false
+		};
+	},
+	methods: {
+		handlePortfolioSwiperSlideChange() {
+			this.isArrowUpDisabled = this.portfolioSwiper.isBeginning;
+			this.isArrowDownDisabled = this.portfolioSwiper.isEnd;
+		}
+	}
+};
+</script>

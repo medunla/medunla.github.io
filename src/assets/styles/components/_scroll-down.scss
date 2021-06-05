@@ -1,0 +1,13 @@
+.scroll-down {
+	text-align: center;
+	
+	> svg {
+		width: 104px;
+		height: 104px;
+		display: block;
+		cursor: pointer;
+	}
+	> .text {
+		display: block;		
+	}
+}
