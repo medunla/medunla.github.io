@@ -6,7 +6,6 @@ export default {
 			windowSize: (state) => state.windowSize
 		}),
 		cssWindowSize() {
-			console.log(this.windowSize.width, this.windowSize.height);
 			return this.windowSize.width && this.windowSize.height
 				? `width: ${this.windowSize.width}px;height: ${this.windowSize.height}px;`
 				: "";
