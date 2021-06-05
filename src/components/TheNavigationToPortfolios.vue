@@ -2,42 +2,30 @@
 	<div class="navigation-page-portfolio">
 		<div class="wrapper">
 			<router-link
-				:to="{ name: 'home' }"
+				:to="{
+					name: 'portfolios'
+				}"
 				:class="{ 'is-active': isPagePortfolios }"
-				type="button"
 				class="button-navigation-page-portfolio"
-				@click.native="handleChangeToPortfoliosPage"
+				@click.native="handleChangePage"
 			>
-				{{ text }}
+				Portfolios
 			</router-link>
 		</div>
 	</div>
 </template>
 
 <script>
-import { pageList } from "../assets/js/constant";
-
 export default {
 	name: "TheNavigationToPortfolios",
-	props: {
-		currentPageSlug: {
-			type: String,
-			default: null
-		}
-	},
-	data() {
-		return {
-			text: pageList.PORTFOLIOS.label
-		}
-	},
 	computed: {
 		isPagePortfolios() {
-			return this.currentPageSlug === pageList.PORTFOLIOS.slug;
+			return this.$route.name === "portfolios";
 		}
 	},
 	methods: {
-		handleChangeToPortfoliosPage() {
-			this.$emit("onChangePage", pageList.PORTFOLIOS.key);
+		handleChangePage() {
+			this.$emit("onChangePage");
 		}
 	}
 };

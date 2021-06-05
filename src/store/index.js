@@ -1,31 +1,24 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { pageList } from "../assets/js/constant";
 
 Vue.use(Vuex);
 
 const OPEN_NAVIGATION = "OPEN_NAVIGATION";
 const CLOSE_NAVIGATION = "CLOSE_NAVIGATION";
-const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
+const SET_PORTFOLIO_DETAIL_DATA = "SET_PORTFOLIO_DETAIL_DATA";
 const UPDATE_WINDOW_SIZE = "UPDATE_WINDOW_SIZE";
-
-const defaultPage = pageList.HOME;
 
 export default new Vuex.Store({
 	state: {
 		header: {
-			pageList: [
-				pageList.HOME,
-				pageList.PORTFOLIOS,
-				pageList.ABOUT,
-				pageList.CONTACT
-			],
-			currentPage: defaultPage,
 			isOpenedNavgation: false
 		},
 		windowSize: {
 			width: 0,
 			height: 0
+		},
+		portfolioDetail: {
+			name: null
 		}
 	},
 	mutations: {
@@ -41,18 +34,11 @@ export default new Vuex.Store({
 				isOpenedNavgation: false
 			};
 		},
-		[SET_CURRENT_PAGE](state, key = null) {
-			let currentPage = defaultPage;
-			if (typeof key === "string") {
-				currentPage = pageList[key] || defaultPage;
-			} else if (typeof key === "object") {
-				currentPage = key;
+		[SET_PORTFOLIO_DETAIL_DATA](state, data) {
+			state.portfolioDetail = {
+				...state.portfolioDetail,
+				...data
 			}
-
-			state.header = {
-				...state.header,
-				currentPage
-			};
 		},
 		[UPDATE_WINDOW_SIZE](state, { width, height }) {
 			state.windowSize = {
@@ -68,8 +54,8 @@ export default new Vuex.Store({
 		closeNavigation({ commit }) {
 			commit(CLOSE_NAVIGATION);
 		},
-		setCurrentPage({ commit }, key) {
-			commit(SET_CURRENT_PAGE, key);
+		setPortfolioDetailData({ commit }, data) {
+			commit(SET_PORTFOLIO_DETAIL_DATA, data);
 		},
 		updateWindowSize({ commit }, data) {
 			commit(UPDATE_WINDOW_SIZE, data);

@@ -4,9 +4,7 @@
 		class="front-page full-page"
 	>
 		<home-front-page-name />
-		<home-front-page-mouse
-			@onClick="handleOnClickMouse"
-		/>
+		<home-front-page-mouse @click.native="handleClickIconMouse" />
 	</div>
 </template>
 
@@ -21,8 +19,8 @@ export default {
 		homeFrontPageMouse
 	},
 	methods: {
-		handleOnClickMouse() {
-			this.$emit("onClickIconMouse");
+		handleClickIconMouse() {
+			this.$router.push({ name: "portfolios" });
 		}
 	}
 };

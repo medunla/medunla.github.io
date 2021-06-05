@@ -3,13 +3,12 @@
 		v-swiper:homeSwiper="swiperOptions"
 		:style="cssWindowSize"
 		@slide-change="handleHomeSwiperSlideChange"
+		@ready="ready"
 		class="full-page"
 	>
 		<div class="swiper-wrapper main-container-swiper-wrapper">
 			<div class="swiper-slide">
-				<home-front-page
-					@onClickIconMouse="handleChangeToPortfoliosPage"
-				/>
+				<home-front-page />
 			</div>
 			<div class="swiper-slide">
 				<home-portfolio-page />
@@ -19,20 +18,12 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
-import { pageList } from "../assets/js/constant";
+import { mapState } from "vuex";
 import HomeFrontPage from "../components/HomeFrontPage.vue";
 import HomePortfolioPage from "../components/HomePortfolioPage.vue";
 
-const mappingPageToSlideIndex = {
-	[pageList.HOME.key]: 0,
-	[pageList.PORTFOLIOS.key]: 1
-};
-const homeIndex = mappingPageToSlideIndex[pageList.HOME.key];
-const portfolioIndex = mappingPageToSlideIndex[pageList.PORTFOLIOS.key];
-
 export default {
-	name: "Home",
+	name: "HomePage",
 	title: "Panupat K.",
 	components: {
 		HomeFrontPage,
@@ -45,7 +36,8 @@ export default {
 				speed: 1000,
 				mousewheel: true,
 				keyboard: true,
-				allowSlidePrev: false
+				allowSlidePrev: false,
+				allowTouchMove: false
 			}
 		};
 	},
@@ -54,30 +46,28 @@ export default {
 			headerData: (state) => state.header
 		})
 	},
-	watch: {
-		"headerData.currentPage.key": {
-			deep: true,
-			handler(currentPageKey) {
-				this.handleChangeSlideByPageKey(currentPageKey);
-			}
+	created() {
+		// Change init slide index
+		if (this.$route.name === "portfolios") {
+			this.swiperOptions = {
+				...this.swiperOptions,
+				initialSlide: 1
+			};
 		}
 	},
 	methods: {
-		...mapActions({
-			setCurrentPage: "setCurrentPage"
-		}),
 		handleHomeSwiperSlideChange() {
 			switch (this.homeSwiper.activeIndex) {
-				case homeIndex: {
+				case 0: {
 					this.homeSwiper.allowSlidePrev = false;
 					this.homeSwiper.allowSlideNext = true;
 					break;
 				}
 
-				case portfolioIndex: {
+				case 1: {
 					this.homeSwiper.allowSlidePrev = false;
 					this.homeSwiper.allowSlideNext = false;
-					this.setCurrentPage(pageList.PORTFOLIOS.key); // In-case change slide with drag
+					// this.setCurrentPage(pageList.PORTFOLIOS.key); // In-case change slide with drag
 					break;
 				}
 
@@ -85,21 +75,18 @@ export default {
 					break;
 				}
 			}
-		},
-		handleChangeSlideByPageKey(key) {
-			const index = mappingPageToSlideIndex[key] || mappingPageToSlideIndex[pageList.HOME.key];
-
-			if (this.homeSwiper.activeIndex !== index) {
-				// Allow slide before change
-				this.homeSwiper.allowSlidePrev = true;
-				this.homeSwiper.allowSlideNext = true;
-
-				this.homeSwiper.slideTo(index);
-			}
-		},
-		handleChangeToPortfoliosPage() {
-			this.setCurrentPage(pageList.PORTFOLIOS.key);
 		}
+	},
+	beforeRouteLeave(to, from, next) {
+		if (to.name === "portfolios" && from.name === "home") {
+			this.homeSwiper.slideTo(1);
+		} else if (to.name === "home" && from.name === "portfolios") {
+			this.homeSwiper.allowSlidePrev = true;
+			this.homeSwiper.allowSlideNext = true;
+			this.homeSwiper.slideTo(0);
+		}
+
+		next();
 	}
 };
 </script>

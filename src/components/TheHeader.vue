@@ -2,32 +2,26 @@
 	<div class="header">
 		<the-navigation
 			v-if="headerData.isOpenedNavgation"
-			:pageList="headerData.pageList"
-			:currentPageSlug="headerData.currentPage.slug"
-			@onChangePage="handleChangePage"
+			@onChangePage="closeNavigation"
 		/>
 		<the-hamburger
 			:isActive="headerData.isOpenedNavgation"
 			@onOpenNavigation="openNavigation"
 			@onCloseNavigation="closeNavigation"
 		/>
-		<the-navigation-current-page-label
-			:text="headerData.currentPage.label"
-		/>
+		<the-navigation-current-page-label />
 		<the-navigation-to-portfolios
-			:currentPageSlug="headerData.currentPage.slug"
-			@onChangePage="handleChangePage"
+			@onChangePage="closeNavigation"
 		/>
 	</div>
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
-
-import TheNavigation from "@/components/TheNavigation.vue";
-import TheHamburger from "@/components/TheHamburger.vue";
-import TheNavigationCurrentPageLabel from "@/components/TheNavigationCurrentPageLabel.vue";
-import TheNavigationToPortfolios from "@/components/TheNavigationToPortfolios.vue";
+import TheNavigation from "./TheNavigation.vue";
+import TheHamburger from "./TheHamburger.vue";
+import TheNavigationCurrentPageLabel from "./TheNavigationCurrentPageLabel.vue";
+import TheNavigationToPortfolios from "./TheNavigationToPortfolios.vue";
 
 export default {
 	name: "TheHeader",
@@ -37,6 +31,12 @@ export default {
 		TheNavigationCurrentPageLabel,
 		TheNavigationToPortfolios
 	},
+	data() {
+		console.log(this.$route);
+		return {
+			// currentPage
+		};
+	},
 	computed: {
 		...mapState({
 			headerData: (state) => state.header
@@ -45,13 +45,8 @@ export default {
 	methods: {
 		...mapActions({
 			openNavigation: "openNavigation",
-			closeNavigation: "closeNavigation",
-			setCurrentPage: "setCurrentPage"
-		}),
-		handleChangePage(key) {
-			this.closeNavigation();
-			this.setCurrentPage(key);
-		}
+			closeNavigation: "closeNavigation"
+		})
 	}
 };
 </script>

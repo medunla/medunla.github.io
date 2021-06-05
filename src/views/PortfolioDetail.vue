@@ -1,8 +1,7 @@
 <template>
 	<div class="portfolio-container container">
 		<router-link
-			:to="{ name: 'home' }"
-			@click.native="handleClickCloseButton"
+			:to="{ name: 'portfolios' }"
 		>
 			<portfolio-detail-close-button />
 		</router-link>
@@ -18,13 +17,12 @@
 <script>
 import { mapActions } from "vuex";
 import portfolioData from "../assets/js/portfolioData";
-import { pageList } from "../assets/js/constant";
 import PortfolioDetailCloseButton from "../components/PortfolioDetailCloseButton.vue";
 import PortfolioDetailDescription from "../components/PortfolioDetailDescription.vue";
 import PortfolioDetailAttachmentSlide from "../components/PortfolioDetailAttachmentSlide.vue";
 
 export default {
-	name: "PortfolioDetail",
+	name: "PortfolioDetailPage",
 	components: {
 		PortfolioDetailCloseButton,
 		PortfolioDetailDescription,
@@ -42,22 +40,17 @@ export default {
 				// Set page title
 				this.setPageTitle(`${portfolio.name} ― Panupat K.`);
 
-				// Set current page
-				this.setCurrentPage({
-					slug: portfolio.slug,
-					key: portfolio.slug,
-					label: portfolio.name
+				// Set route meta
+				this.setPortfolioDetailData({
+					name: portfolio.name
 				});
 			}
 		}
 	},
 	methods: {
 		...mapActions({
-			setCurrentPage: "setCurrentPage"
-		}),
-		handleClickCloseButton() {
-			this.setCurrentPage(pageList.PORTFOLIOS.key);
-		}
+			setPortfolioDetailData: "setPortfolioDetailData"
+		})
 	}
 };
 </script>

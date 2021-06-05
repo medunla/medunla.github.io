@@ -1,14 +1,18 @@
 <template>
 	<nav class="navigation">
 		<div class="wrapper">
-			<ul v-if="pageList.length">
+			<ul v-if="navigations.length">
 				<li
-					v-for="page in pageList"
-					:key="page.slug"
-					:class="{ 'is-active': page.slug === currentPageSlug }"
-					@click="handleChangePage(page.key)"
+					v-for="(navigation, index) in navigations"
+					:key="index"
 				>
-					<span>{{ page.label }}</span>
+					<router-link
+						:to="navigation.to"
+						exact-active-class="is-active"
+						@click.native="handleChangePage"
+					>
+						<span>{{ navigation.label }}</span>
+					</router-link>
 				</li>
 			</ul>
 		</div>
@@ -18,19 +22,39 @@
 <script>
 export default {
 	name: "TheNavigation",
-	props: {
-		pageList: {
-			type: Array,
-			default: () => []
-		},
-		currentPageSlug: {
-			type: String,
-			default: null
-		}
+	data() {
+		return {
+			navigations: [
+				{
+					to: {
+						name: "home"
+					},
+					label: "Home"
+				},
+				{
+					to: {
+						name: "portfolios"
+					},
+					label: "Portfolios"
+				},
+				{
+					to: {
+						name: "about"
+					},
+					label: "About"
+				},
+				{
+					to: {
+						name: "contact"
+					},
+					label: "Contact"
+				}
+			]
+		};
 	},
 	methods: {
-		handleChangePage(key = null) {
-			this.$emit("onChangePage", key);
+		handleChangePage() {
+			this.$emit("onChangePage");
 		}
 	}
 };
