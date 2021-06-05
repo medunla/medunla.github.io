@@ -64,7 +64,7 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			changePage: "changePage"
+			setCurrentPage: "setCurrentPage"
 		}),
 		handleHomeSwiperSlideChange() {
 			switch (this.homeSwiper.activeIndex) {
@@ -77,7 +77,7 @@ export default {
 				case portfolioIndex: {
 					this.homeSwiper.allowSlidePrev = false;
 					this.homeSwiper.allowSlideNext = false;
-					this.changePage(pageList.PORTFOLIOS.key); // In-case change slide with drag
+					this.setCurrentPage(pageList.PORTFOLIOS.key); // In-case change slide with drag
 					break;
 				}
 
@@ -98,7 +98,7 @@ export default {
 			}
 		},
 		handleChangeToPortfoliosPage() {
-			this.changePage(pageList.PORTFOLIOS.key);
+			this.setCurrentPage(pageList.PORTFOLIOS.key);
 		}
 	}
 };

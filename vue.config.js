@@ -4,7 +4,7 @@ module.exports = {
 		sourceMap: true
 	},
 	pwa: {
-		name: "Resume",
+		name: "Panupat K.",
 		iconPaths: {
 			favicon32: "img/favicon/favicon-32x32.png",
 			favicon16: "img/favicon/favicon-16x16.png",

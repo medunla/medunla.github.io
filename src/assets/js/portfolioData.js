@@ -1,9 +1,8 @@
 export default [
 	{
-		id: 1,
+		slug: "packcreat-8",
 		name: "Packcreat8",
-		description:
-			"Website showcase for Packcreat8 agency. This website build with wordpress theme.",
+		description: "Website showcase for Packcreat8 agency. This website build with wordpress theme.",
 		images: [
 			{
 				url:
@@ -35,7 +34,7 @@ export default [
 		},
 	},
 	{
-		id: 2,
+		slug: "getece",
 		name: "GeTeCe",
 		description:
 			"Company site for GeTeCe Group. GeTeCe is company about ingredient",
@@ -82,7 +81,7 @@ export default [
 		},
 	},
 	{
-		id: 3,
+		slug: "vanzon",
 		name: "Vanzon",
 		description:
 			"e-commerce site for Vanzon Singthong. Develop with Wordpress and Woocommerce.",
@@ -126,7 +125,7 @@ export default [
 		},
 	},
 	{
-		id: 4,
+		slug: "sobha",
 		name: "Sobha",
 		description:
 			"e-commerce site for Vanzon Singthong. Develop with Wordpress and Woocommerce.",
@@ -157,7 +156,7 @@ export default [
 		},
 	},
 	{
-		id: 5,
+		slug: "mtm-academy",
 		name: "MTM Academy",
 		description:
 			"Brochure site for MTM Academy. Develop with Wordpress for easy to manage content by MTM admin.",
@@ -191,7 +190,7 @@ export default [
 		},
 	},
 	{
-		id: 6,
+		slug: "freshdoze",
 		name: "Freshdoze",
 		description:
 			"Brochure site for Freshdoze product. Develop with Wordpress and create custom theme for custom design.",
@@ -253,7 +252,7 @@ export default [
 		},
 	},
 	{
-		id: 7,
+		slug: "dasta",
 		name: "DASTA",
 		description:
 			"Brochure site for goverment sector name องค์การบริหารการพัฒนาพื้นที่พิเศษเพื่อการท่องเที่ยวอย่างยั่งยืน(DASTA). Develop with Wordpress and create custom theme for custom design.",
@@ -316,7 +315,7 @@ export default [
 		},
 	},
 	{
-		id: 8,
+		slug: "omelet",
 		name: "Omelet",
 		description:
 			"Restaurant comic essay in website format. Website design like a smooth and easy to read.",
@@ -364,7 +363,7 @@ export default [
 		},
 	},
 	{
-		id: 9,
+		slug: "ongphra",
 		name: "Ongphra",
 		description:
 			"Application for introduction to learning the culture and history of Phra Pathom Chedi.",
@@ -424,7 +423,7 @@ export default [
 		},
 	},
 	{
-		id: 10,
+		slug: "scb-iep-let-s-bike",
 		name: "SCB IEP let's bike",
 		description:
 			"Website for bressing thai king in let's bike concept. This site support more people come in site same time with use data from json file because we can reduce number of sql connection and json file it can cache.",
@@ -480,7 +479,7 @@ export default [
 		},
 	},
 	{
-		id: 11,
+		slug: "pixelone",
 		name: "Pixelone",
 		description: "Brochure website for Pixelone.",
 		images: [
@@ -522,7 +521,7 @@ export default [
 		},
 	},
 	{
-		id: 12,
+		slug: "ais-anime-kids",
 		name: "AIS Anime KIDS",
 		description:
 			"One page site present product in AIS. This site is a kid mood as a look like funny, little moving and interactive",
@@ -552,7 +551,7 @@ export default [
 		},
 	},
 	{
-		id: 13,
+		slug: "sleep-avatar",
 		name: "Sleep Avatar",
 		description:
 			"Health tool the rest it also helps to tell the quality of sleep. The Quality of sleep as a result, many of sleeping habit. To help you sleep habits and contributes to behavioral change for the better sleep indirectly as well.",

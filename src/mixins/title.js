@@ -11,9 +11,15 @@ const getTitle = (vm) => {
 
 export default {
 	created() {
-		const title = getTitle(this);
-		if (title) {
-			document.title = title;
+		this.setPageTitle();
+	},
+	methods: {
+		setPageTitle(title) {
+			const pageTitle = title || getTitle(this);
+
+			if (pageTitle) {
+				document.title = pageTitle;
+			}
 		}
 	}
 }

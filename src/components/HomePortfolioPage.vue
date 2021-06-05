@@ -11,10 +11,19 @@
 			<div class="swiper-wrapper">
 				<div
 					v-for="portfolio in portfolioData"
-					:key="portfolio.id"
+					:key="portfolio.slug"
 					class="swiper-slide portfolio-list"
 				>
-					<h2>{{ portfolio.name }}</h2>
+					<h2>
+						<router-link :to="{
+							name: 'portfolioDetail',
+							params: {
+								slug: portfolio.slug
+							}
+						}">
+							{{ portfolio.name }}
+						</router-link>
+					</h2>
 				</div>
 			</div>
 		</div>

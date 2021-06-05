@@ -46,11 +46,11 @@ export default {
 		...mapActions({
 			openNavigation: "openNavigation",
 			closeNavigation: "closeNavigation",
-			changePage: "changePage"
+			setCurrentPage: "setCurrentPage"
 		}),
 		handleChangePage(key) {
 			this.closeNavigation();
-			this.changePage(key);
+			this.setCurrentPage(key);
 		}
 	}
 };

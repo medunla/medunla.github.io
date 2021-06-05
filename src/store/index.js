@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 const OPEN_NAVIGATION = "OPEN_NAVIGATION";
 const CLOSE_NAVIGATION = "CLOSE_NAVIGATION";
-const CHANGE_PAGE = "CHANGE_PAGE";
+const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const UPDATE_WINDOW_SIZE = "UPDATE_WINDOW_SIZE";
 
 const defaultPage = pageList.HOME;
@@ -41,10 +41,17 @@ export default new Vuex.Store({
 				isOpenedNavgation: false
 			};
 		},
-		[CHANGE_PAGE](state, key = null) {
+		[SET_CURRENT_PAGE](state, key = null) {
+			let currentPage = defaultPage;
+			if (typeof key === "string") {
+				currentPage = pageList[key] || defaultPage;
+			} else if (typeof key === "object") {
+				currentPage = key;
+			}
+
 			state.header = {
 				...state.header,
-				currentPage: pageList[key] || defaultPage
+				currentPage
 			};
 		},
 		[UPDATE_WINDOW_SIZE](state, { width, height }) {
@@ -61,8 +68,8 @@ export default new Vuex.Store({
 		closeNavigation({ commit }) {
 			commit(CLOSE_NAVIGATION);
 		},
-		changePage({ commit }, key) {
-			commit(CHANGE_PAGE, key);
+		setCurrentPage({ commit }, key) {
+			commit(SET_CURRENT_PAGE, key);
 		},
 		updateWindowSize({ commit }, data) {
 			commit(UPDATE_WINDOW_SIZE, data);

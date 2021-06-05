@@ -1,14 +1,15 @@
 <template>
 	<div class="navigation-page-portfolio">
 		<div class="wrapper">
-			<button
+			<router-link
+				:to="{ name: 'home' }"
 				:class="{ 'is-active': isPagePortfolios }"
 				type="button"
 				class="button-navigation-page-portfolio"
-				@click="handleChangeToPortfoliosPage"
+				@click.native="handleChangeToPortfoliosPage"
 			>
 				{{ text }}
-			</button>
+			</router-link>
 		</div>
 	</div>
 </template>
