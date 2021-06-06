@@ -7,14 +7,16 @@
 		@media (max-width: $mobile-break-point) {
 			max-width: calc(100% - #{$page-gutter-with-element-mobile} );
 		}
+
 		@media (max-width: $small-mobile-break-point) {
 			max-width: calc(100% - #{$page-gutter-with-element-small-mobile} );
 		}
 	}
 }
+
 .contact-inner {
 	@extend .other-container-inner;
-	
+
 	.title {
 		font-size: 5rem;
 		line-height: 1.1;
@@ -26,20 +28,23 @@
 		@media (max-width: 1560px) {
 			font-size: 4rem;
 		}
+
 		@media (max-width: 1200px) {
 			width: 100%;
 		}
+
 		@media (max-width: $small-mobile-break-point) {
 			font-size: 3rem;
 		}
 
 		// FadeRight
-		@extend %transition-faderight-setup;
-		transition-delay: 0.5s;
-		.is-contact-page & {
-			@extend %transition-faderight-active;
-		}
+		// @extend %transition-faderight-setup;
+		// transition-delay: 0.5s;
+		// .is-contact-page & {
+		// 	@extend %transition-faderight-active;
+		// }
 	}
+
 	.column-row {
 		display: flex;
 		width: 100%;
@@ -48,6 +53,7 @@
 			flex-wrap: wrap;
 		}
 	}
+
 	.contact-form {
 		width: 100%;
 		padding-right: 100px;
@@ -57,12 +63,13 @@
 		}
 
 		// FadeRight
-		@extend %transition-faderight-setup;
-		transition-delay: 0.6s;
-		.is-contact-page & {
-			@extend %transition-faderight-active;
-		}
+		// @extend %transition-faderight-setup;
+		// transition-delay: 0.6s;
+		// .is-contact-page & {
+		// 	@extend %transition-faderight-active;
+		// }
 	}
+
 	.social-lists {
 		width: 350px;
 		min-width: 350px;
@@ -75,13 +82,14 @@
 		}
 
 		// FadeLeft
-		@extend %transition-fadeleft-setup;
-		transition-delay: 0.7s;
-		.is-contact-page & {
-			@extend %transition-fadeleft-active;
-		}
+		// @extend %transition-fadeleft-setup;
+		// transition-delay: 0.7s;
+		// .is-contact-page & {
+		// 	@extend %transition-fadeleft-active;
+		// }
 	}
 }
+
 .contact-inner-wrapper {
 	width: 100%;
 	display: flex;
