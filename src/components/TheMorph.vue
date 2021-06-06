@@ -115,36 +115,40 @@ export default {
 			this.handleAnimateMorphBlueForm1To2();
 			this.handleAnimateMorphGreenForm1To2();
 		},
-		animateSvg(snapElement, { points, time, callback }) {
-			snapElement.animate({ d: points }, time, mina.linear, callback); // eslint-disable-line no-undef
+		animateSvg(snapElement, { points, time, timeingFunction, callback }) {
+			snapElement.animate({ d: points }, time, timeingFunction, callback);
 		},
 		handleAnimateMorphBlueForm1To2() {
 			const points = this.morphBlue2Points;
 			const time = 1500;
+			const timeingFunction = mina.linear; // eslint-disable-line no-undef
 			const callback = this.handleAnimateMorphBlueForm2To1;
 
-			this.animateSvg(this.morphBlue1, { points, time, callback });
+			this.animateSvg(this.morphBlue1, { points, time, timeingFunction, callback });
 		},
 		handleAnimateMorphBlueForm2To1() {
 			const points = this.morphBlue1Points;
 			const time = 1500;
+			const timeingFunction = mina.easeout; // eslint-disable-line no-undef
 			const callback = this.handleAnimateMorphBlueForm1To2;
 
-			this.animateSvg(this.morphBlue1, { points, time, callback });
+			this.animateSvg(this.morphBlue1, { points, time, timeingFunction, callback });
 		},
 		handleAnimateMorphGreenForm1To2() {
 			const points = this.morphGreen2Points;
 			const time = 4000;
+			const timeingFunction = mina.linear; // eslint-disable-line no-undef
 			const callback = this.handleAnimateMorphGreenForm2To1;
 
-			this.animateSvg(this.morphGreen1, { points, time, callback });
+			this.animateSvg(this.morphGreen1, { points, time, timeingFunction, callback });
 		},
 		handleAnimateMorphGreenForm2To1() {
 			const points = this.morphGreen1Points;
 			const time = 4000;
+			const timeingFunction = mina.easeout; // eslint-disable-line no-undef
 			const callback = this.handleAnimateMorphGreenForm1To2;
 
-			this.animateSvg(this.morphGreen1, { points, time, callback });
+			this.animateSvg(this.morphGreen1, { points, time, timeingFunction, callback });
 		}
 	}
 };
