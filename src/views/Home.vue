@@ -3,7 +3,6 @@
 		v-swiper:homeSwiper="swiperOptions"
 		:style="cssWindowSize"
 		@slide-change="handleHomeSwiperSlideChange"
-		@ready="ready"
 		class="full-page"
 	>
 		<div class="swiper-wrapper main-container-swiper-wrapper">
