@@ -51,8 +51,7 @@
 			&.is-active,
 			&:hover {
 				letter-spacing: 10px;
-				filter: blur(4px);
-				opacity: 0.5;
+				color: $color-blue;
 			}
 		}
 	}
