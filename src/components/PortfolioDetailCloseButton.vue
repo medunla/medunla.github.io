@@ -1,5 +1,5 @@
 <template>
-	<div class="close-button" title="Close">
+	<div class="portfolio-close-button close-button" title="Close">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			x="0px"

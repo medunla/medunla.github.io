@@ -1,5 +1,8 @@
 <template>
-	<div class="contact-container container">
+	<div :class="['contact-container container', {
+		'is-page-ready': isPageReady,
+		'hiding': isHiding
+	}]">
 		<div class="contact-inner">
 			<h2 class="title">Please feel free to contact me</h2>
 			<div class="contact-inner-wrapper">
@@ -28,6 +31,8 @@ export default {
 	},
 	data() {
 		return {
+			isPageReady: false,
+			isHiding: false,
 			socials: [
 				{
 					name: "github.com/medunla",
@@ -63,6 +68,19 @@ export default {
 				}
 			]
 		};
+	},
+	mounted() {
+		setTimeout(() => {
+			this.isPageReady = true;
+		}, 100);
+	},
+	beforeRouteLeave(to, from, next) {
+		this.isHiding = true;
+
+		setTimeout(() => {
+			window.scrollTo(0, 0);
+			next();
+		}, 500);
 	}
 };
 </script>

@@ -1,5 +1,11 @@
 <template>
-	<div class="portfolio-container container">
+	<div
+		:class="{
+			'is-page-ready': isPageReady,
+			'hiding': isHiding
+		}"
+		class="portfolio-container container"
+	>
 		<router-link
 			:to="{ name: 'portfolios' }"
 		>
@@ -28,6 +34,12 @@ export default {
 		PortfolioDetailDescription,
 		PortfolioDetailAttachmentSlide
 	},
+	data() {
+		return {
+			isPageReady: false,
+			isHiding: false
+		};
+	},
 	computed: {
 		portfolio() {
 			return portfolioData.find((item) => item.slug === this.$route.params.slug) || {};
@@ -47,10 +59,23 @@ export default {
 			}
 		}
 	},
+	mounted() {
+		setTimeout(() => {
+			this.isPageReady = true;
+		}, 100);
+	},
 	methods: {
 		...mapActions({
 			setPortfolioDetailData: "setPortfolioDetailData"
 		})
+	},
+	beforeRouteLeave(to, from, next) {
+		this.isHiding = true;
+
+		setTimeout(() => {
+			window.scrollTo(0, 0);
+			next();
+		}, 500);
 	}
 };
 </script>

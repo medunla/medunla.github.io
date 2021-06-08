@@ -1,5 +1,8 @@
 <template>
-	<div class="about-container container">
+	<div :class="['about-container container', {
+		'is-page-ready': isPageReady,
+		'hiding': isHiding
+	}]">
 		<div class="about-inner">
 			<h2 class="title">{{ data.name }}</h2>
 			<img
@@ -61,6 +64,8 @@ export default {
 			: diffYearsInt;
 
 		return {
+			isPageReady: false,
+			isHiding: false,
 			data: {
 				name: "Panupat Kammahawong",
 				imageUrl: "img/panupat-image.jpg",
@@ -102,6 +107,19 @@ export default {
 				]
 			}
 		};
+	},
+	mounted() {
+		setTimeout(() => {
+			this.isPageReady = true;
+		}, 100);
+	},
+	beforeRouteLeave(to, from, next) {
+		this.isHiding = true;
+
+		setTimeout(() => {
+			window.scrollTo(0, 0);
+			next();
+		}, 500);
 	}
 };
 </script>

@@ -87,12 +87,14 @@
 	transform-origin: 0% 100%;
 	transition: filter 0.5s;
 
-	// .wrapper {
-	// 	// ShowUp
-	// 	@extend %transition-setup;
-	// 	transition-delay: 1s;
-	// 	.is-page-ready & {
-	// 		@extend %transition-active;
-	// 	}
-	// }
+	.wrapper {
+		// ShowUp
+		@extend %transition-setup;
+
+		transition-delay: 1s;
+
+		.is-page-ready & {
+			@extend %transition-active;
+		}
+	}
 }

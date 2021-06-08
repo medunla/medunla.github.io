@@ -33,28 +33,31 @@
 		@media (max-width: 712px) {
 			font-size: 5.5rem;
 		}
+
 		@media (max-width: 603px) {
 			font-size: 4rem;
 		}
+
 		@media (max-width: 470px) {
 			font-size: 3rem;
 		}
+
 		@media (max-width: 370px) {
 			font-size: 2.4rem;
 		}
 
-		// // FadeUp
-		// @extend %transition-fadeup-setup;
-		// .is-page-ready & {
-		// 	@extend %transition-fadeup-active;
-		// }
+		// FadeUp
+		@extend %transition-fadeup-setup;
 
-		// Animation
+		.is-page-ready & {
+			@extend %transition-fadeup-active;
+		}
+
+		// Animation text
 		> span {
 			display: inline-block;
 			text-shadow: 0 0 10px rgba(0,0,0,0.16);
 			margin: 0 10px;
-
 			animation-timing-function: linear;
 			animation-direction: alternate;
 			animation-iteration-count: infinite;
@@ -64,16 +67,19 @@
 				animation-duration: 11s;
 				animation-delay: 2s;
 			}
+
 			&:nth-child(4n+2) {
 				animation-name: front-name-animate;
 				animation-duration: 13s;
 				animation-delay: 2.5s;
 			}
+
 			&:nth-child(4n+3) {
 				animation-name: front-name-animate-reverse;
 				animation-duration: 17s;
 				animation-delay: 3s;
 			}
+
 			&:nth-child(4n) {
 				animation-name: front-name-animate;
 				animation-duration: 19s;
@@ -81,6 +87,7 @@
 			}
 		}
 	}
+
 	.position {
 		font-size: 1.5rem;
 		color: $color-blue;
@@ -94,11 +101,14 @@
 
 		// FadeUp
 		@extend %transition-fadeup-setup;
+
 		transition-delay: 0.5s;
+
 		.is-page-ready & {
 			@extend %transition-fadeup-active;
 		}
 	}
+
 	.scroll-down {
 		position: absolute;
 		z-index: 2;
@@ -107,13 +117,16 @@
 		@media (max-width: $mobile-break-point) {
 			bottom: $page-gutter-mobile;
 		}
+
 		@media (max-width: $small-mobile-break-point) {
 			bottom: $page-gutter-small-mobile;
 		}
 
 		// FadeUp
 		@extend %transition-fadeup-setup;
+
 		transition-delay: 1s;
+
 		.is-page-ready & {
 			@extend %transition-fadeup-active;
 		}
@@ -125,6 +138,7 @@
 		transform:translateY(0);
 	}
 }
+
 @keyframes front-name-animate {
 	0% {
 		transform:translateY(0);
@@ -139,6 +153,7 @@
 		transform:translateY(-10px);
 	}
 }
+
 @keyframes front-name-animate-reverse {
 	0% {
 		transform:translateY(0);

@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<the-header />
+		<the-header :class="{ 'is-page-ready': isPageReady }" />
 		<the-morph />
 		<div class="content">
 			<router-view />
@@ -22,12 +22,21 @@ export default {
 		TheHeader,
 		TheMorph
 	},
+	data() {
+		return {
+			isPageReady: false
+		};
+	},
 	mounted() {
+		setTimeout(() => {
+			this.isPageReady = true;
+		}, 100);
+
 		this.getWindowSize(); // from mixin windowSize
 		window.addEventListener("resize", this.getWindowSize, true); // from mixin windowSize
 	},
 	destroyed() {
-		window.removedEventListener("resize", this.getWindowSize, true); // from mixin windowSize
+		window.removeEventListener("resize", this.getWindowSize, true); // from mixin windowSize
 	}
 };
 </script>

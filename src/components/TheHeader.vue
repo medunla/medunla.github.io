@@ -1,9 +1,11 @@
 <template>
 	<div class="header">
-		<the-navigation
-			v-if="headerData.isOpenedNavgation"
-			@onChangePage="closeNavigation"
-		/>
+		<transition name="fade">
+			<the-navigation
+				v-if="headerData.isOpenedNavgation"
+				@onChangePage="closeNavigation"
+			/>
+		</transition>
 		<the-hamburger
 			:isActive="headerData.isOpenedNavgation"
 			@onOpenNavigation="openNavigation"
@@ -30,12 +32,6 @@ export default {
 		TheHamburger,
 		TheNavigationCurrentPageLabel,
 		TheNavigationToPortfolios
-	},
-	data() {
-		console.log(this.$route);
-		return {
-			// currentPage
-		};
 	},
 	computed: {
 		...mapState({

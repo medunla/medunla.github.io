@@ -1,16 +1,21 @@
 <template>
-	<div
-		v-swiper:homeSwiper="swiperOptions"
-		:style="cssWindowSize"
-		@slide-change="handleHomeSwiperSlideChange"
-		class="full-page"
-	>
-		<div class="swiper-wrapper main-container-swiper-wrapper">
-			<div class="swiper-slide">
-				<home-front-page />
-			</div>
-			<div class="swiper-slide">
-				<home-portfolio-page />
+	<div :class="{
+		'is-page-ready': isPageReady,
+		'hiding': isHiding
+	}">
+		<div
+			v-swiper:homeSwiper="swiperOptions"
+			:style="cssWindowSize"
+			class="full-page"
+			@slide-change="handleHomeSwiperSlideChange"
+		>
+			<div class="swiper-wrapper main-container-swiper-wrapper">
+				<div class="swiper-slide">
+					<home-front-page />
+				</div>
+				<div class="swiper-slide">
+					<home-portfolio-page />
+				</div>
 			</div>
 		</div>
 	</div>
@@ -30,6 +35,8 @@ export default {
 	},
 	data() {
 		return {
+			isPageReady: false,
+			isHiding: false,
 			swiperOptions: {
 				direction: "vertical",
 				speed: 1000,
@@ -54,6 +61,11 @@ export default {
 			};
 		}
 	},
+	mounted() {
+		setTimeout(() => {
+			this.isPageReady = true;
+		}, 100);
+	},
 	methods: {
 		handleHomeSwiperSlideChange() {
 			switch (this.homeSwiper.activeIndex) {
@@ -77,6 +89,7 @@ export default {
 		}
 	},
 	beforeRouteLeave(to, from, next) {
+		// Control slide page
 		if (to.name === "portfolios" && from.name === "home") {
 			this.homeSwiper.slideTo(1);
 		} else if (to.name === "home" && from.name === "portfolios") {
@@ -85,7 +98,16 @@ export default {
 			this.homeSwiper.slideTo(0);
 		}
 
-		next();
+		// Fadeout
+		if (!["home", "portfolios"].includes(to.name)) {
+			this.isHiding = true;
+
+			setTimeout(() => {
+				next();
+			}, 500);
+		} else {
+			next();
+		}
 	}
 };
 </script>
