@@ -90,6 +90,7 @@
 
 	&.disabled {
 		cursor: not-allowed;
+		opacity: 0.2;
 	}
 
 	// ShowUp
@@ -99,10 +100,6 @@
 
 	.is-page-ready & {
 		@extend %transition-active;
-	}
-
-	.is-page-ready &.disabled {
-		opacity: 0.2;
 	}
 }
 

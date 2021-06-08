@@ -35,6 +35,7 @@
 			}]"
 			src="/img/arrow-up.svg"
 			alt="Arrow Up"
+			@click="handleSlidePrev"
 		>
 		<img
 			:class="['portfolio-list-arrow-down', {
@@ -42,6 +43,7 @@
 			}]"
 			src="/img/arrow-down.svg"
 			alt="Arrow Down"
+			@click="handleSlideNext"
 		>
 		<!-- end arrow -->
 	</div>
@@ -70,6 +72,12 @@ export default {
 		handlePortfolioSwiperSlideChange() {
 			this.isArrowUpDisabled = this.portfolioSwiper.isBeginning;
 			this.isArrowDownDisabled = this.portfolioSwiper.isEnd;
+		},
+		handleSlidePrev() {
+			this.portfolioSwiper.slidePrev();
+		},
+		handleSlideNext() {
+			this.portfolioSwiper.slideNext();
 		}
 	}
 };
