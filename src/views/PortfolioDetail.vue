@@ -6,9 +6,7 @@
 		}"
 		class="portfolio-container container"
 	>
-		<router-link
-			:to="{ name: 'portfolios' }"
-		>
+		<router-link :to="{ name: NAVIGATION_PORTFOLIOS.name }">
 			<portfolio-detail-close-button />
 		</router-link>
 
@@ -22,6 +20,7 @@
 
 <script>
 import { mapActions } from "vuex";
+import { NAVIGATION_PORTFOLIOS } from "../assets/js/constant";
 import portfolioData from "../assets/js/portfolioData";
 import PortfolioDetailCloseButton from "../components/PortfolioDetailCloseButton.vue";
 import PortfolioDetailDescription from "../components/PortfolioDetailDescription.vue";
@@ -36,6 +35,7 @@ export default {
 	},
 	data() {
 		return {
+			NAVIGATION_PORTFOLIOS,
 			isPageReady: false,
 			isHiding: false
 		};

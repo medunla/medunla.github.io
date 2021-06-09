@@ -24,8 +24,14 @@
 
 <script>
 import { mapState } from "vuex";
+import { NAVIGATION_HOME, NAVIGATION_PORTFOLIOS } from "../assets/js/constant";
 import HomeFrontPage from "../components/HomeFrontPage.vue";
 import HomePortfolioPage from "../components/HomePortfolioPage.vue";
+
+const pageList = [
+	NAVIGATION_HOME.name,
+	NAVIGATION_PORTFOLIOS.name
+];
 
 export default {
 	name: "HomePage",
@@ -54,7 +60,7 @@ export default {
 	},
 	created() {
 		// Change init slide index
-		if (this.$route.name === "portfolios") {
+		if (this.$route.name === NAVIGATION_PORTFOLIOS.name) {
 			this.swiperOptions = {
 				...this.swiperOptions,
 				initialSlide: 1
@@ -94,32 +100,32 @@ export default {
 		},
 		handleOnWheel(event) {
 			// NOTE: event.deltaY === 100 is wheel down
-			if (this.$route.name === "home" && event.deltaY === 100) {
+			if (this.$route.name === NAVIGATION_HOME.name && event.deltaY === 100) {
 				this.$router.push({
-					name: "portfolios"
+					name: NAVIGATION_PORTFOLIOS.name
 				});
 			}
 		},
 		handleOnKeypress(event) {
-			if (this.$route.name === "home" && event?.keyCode === 40) {
+			if (this.$route.name === NAVIGATION_HOME.name && event?.keyCode === 40) {
 				this.$router.push({
-					name: "portfolios"
+					name: NAVIGATION_PORTFOLIOS.name
 				});
 			}
 		}
 	},
 	beforeRouteLeave(to, from, next) {
 		// Control slide page
-		if (to.name === "portfolios" && from.name === "home") {
+		if (to.name === NAVIGATION_PORTFOLIOS.name && from.name === NAVIGATION_HOME.name) {
 			this.homeSwiper.slideTo(1);
-		} else if (to.name === "home" && from.name === "portfolios") {
+		} else if (to.name === NAVIGATION_HOME.name && from.name === NAVIGATION_PORTFOLIOS.name) {
 			this.homeSwiper.allowSlidePrev = true;
 			this.homeSwiper.allowSlideNext = true;
 			this.homeSwiper.slideTo(0);
 		}
 
 		// Fadeout
-		if (!["home", "portfolios"].includes(to.name)) {
+		if (!pageList.includes(to.name)) {
 			this.isHiding = true;
 
 			setTimeout(() => {

@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import { NAVIGATION_HOME, NAVIGATION_PORTFOLIOS, NAVIGATION_ABOUT, NAVIGATION_CONTACT } from "../assets/js/constant";
+
 export default {
 	name: "TheNavigation",
 	data() {
@@ -31,27 +33,27 @@ export default {
 			navigations: [
 				{
 					to: {
-						name: "home"
+						name: NAVIGATION_HOME.name
 					},
-					label: "Home"
+					label: NAVIGATION_HOME.label
 				},
 				{
 					to: {
-						name: "portfolios"
+						name: NAVIGATION_PORTFOLIOS.name
 					},
-					label: "Portfolios"
+					label: NAVIGATION_PORTFOLIOS.label
 				},
 				{
 					to: {
-						name: "about"
+						name: NAVIGATION_ABOUT.name
 					},
-					label: "About"
+					label: NAVIGATION_ABOUT.label
 				},
 				{
 					to: {
-						name: "contact"
+						name: NAVIGATION_CONTACT.name
 					},
-					label: "Contact"
+					label: NAVIGATION_CONTACT.label
 				}
 			]
 		};

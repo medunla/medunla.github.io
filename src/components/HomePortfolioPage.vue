@@ -16,7 +16,7 @@
 				>
 					<h2 class="portfolio-list-item-name">
 						<router-link :to="{
-							name: 'portfolioDetail',
+							name: NAVIGATION_PORTFOLIO_DETAIL.name,
 							params: {
 								slug: portfolio.slug
 							}
@@ -50,12 +50,14 @@
 </template>
 
 <script>
+import { NAVIGATION_PORTFOLIO_DETAIL } from "../assets/js/constant";
 import portfolioData from "../assets/js/portfolioData";
 
 export default {
 	name: "HomePortfolioPage",
 	data() {
 		return {
+			NAVIGATION_PORTFOLIO_DETAIL,
 			portfolioData,
 			swiperOptions: {
 				direction: "vertical",

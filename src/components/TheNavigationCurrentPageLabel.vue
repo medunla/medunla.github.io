@@ -9,6 +9,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { NAVIGATION_PORTFOLIO_DETAIL } from "../assets/js/constant";
 
 export default {
 	name: "TheNavigationCurrentPageLabel",
@@ -17,7 +18,7 @@ export default {
 			portfolioDetailData: (state) => state.portfolioDetail
 		}),
 		pageLabel() {
-			if (this.$route.name === "portfolioDetail") {
+			if (this.$route.name === NAVIGATION_PORTFOLIO_DETAIL.name) {
 				return this.portfolioDetailData.name;
 			}
 			return this.$route.meta.label;

@@ -3,7 +3,7 @@
 		<div class="navigation-page-portfolio-wrapper">
 			<router-link
 				:to="{
-					name: 'portfolios'
+					name: NAVIGATION_PORTFOLIOS.name
 				}"
 				:class="{ 'is-active': isPagePortfolios }"
 				class="button-navigation-page-portfolio"
@@ -16,11 +16,18 @@
 </template>
 
 <script>
+import { NAVIGATION_PORTFOLIOS } from "../assets/js/constant";
+
 export default {
 	name: "TheNavigationToPortfolios",
+	data() {
+		return {
+			NAVIGATION_PORTFOLIOS
+		};
+	},
 	computed: {
 		isPagePortfolios() {
-			return this.$route.name === "portfolios";
+			return this.$route.name === NAVIGATION_PORTFOLIOS.name;
 		}
 	},
 	methods: {
