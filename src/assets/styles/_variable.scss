@@ -48,8 +48,8 @@ $small-mobile-break-point: 680px;
 }
 
 .other-container {
-	display: flex;
-	justify-content: center;
+	max-width: 1600px;
+	margin: 0 auto;
 	transition: padding-left 0.3s, padding-right 0.3s;
 
 	@media (max-width: $mobile-break-point) {
@@ -67,7 +67,6 @@ $small-mobile-break-point: 680px;
 }
 
 .other-container-inner {
-	max-width: 1600px;
 	padding-left: $page-gutter-with-element;
 	padding-right: $page-gutter-with-element;
 	margin-top: 120px;
