@@ -1,14 +1,14 @@
 <template>
-	<div class="content-group">
+	<div class="about-content-item-content">
 		<h4
 			v-if="data.year"
-			class="content-time color-blue"
+			class="about-content-item-content-time color-blue"
 		>
 			{{ data.year }}
 		</h4>
 		<h4
 			v-if="data.positionName"
-			class="content-name"
+			class="about-content-item-content-name"
 		>
 			{{ data.positionName }}
 			<template v-if="data.companyName">
@@ -17,12 +17,12 @@
 		</h4>
 		<ul
 			v-if="data.details && data.details.length"
-			class="content-list"
+			class="about-content-item-content-detail-list"
 		>
 			<li
 				v-for="(item, index) in data.details"
 				:key="index"
-				class="content-list-item"
+				class="about-content-item-content-detail-list-item"
 			>
 				{{ item }}
 			</li>

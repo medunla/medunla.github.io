@@ -1,24 +1,26 @@
 <template>
-	<div>
-		<h3 class="content-title">Skills</h3>
-		<ul class="skill-lists">
+	<div class="about-content-item">
+		<h3 class="about-content-item-title">Skills</h3>
+		<ul class="skill-list">
 			<li
 				v-for="skill in list"
 				:key="skill.name"
+				class="skill-list-item"
 			>
 				<div
 					v-if="skill.image"
-					class="skill-image"
+					class="skill-list-item-image"
 				>
 					<img
 						:src="skill.image"
 						:alt="skill.name"
 						loading="lazy"
+						class="skill-list-item-image-element"
 					>
 				</div>
 				<p
 					v-if="skill.name"
-					class="skill-name"
+					class="skill-list-item-name"
 				>
 					{{ skill.name }}
 				</p>

@@ -1,14 +1,14 @@
 <template>
-	<div class="content-group">
+	<div class="about-content-item-content">
 		<h4
 			v-if="data.year"
-			class="content-time color-blue"
+			class="about-content-item-content-time color-blue"
 		>
 			{{ data.year }}
 		</h4>
 		<h4
 			v-if="data.name"
-			class="content-name"
+			class="about-content-item-content-name"
 		>
 			{{ data.name }}
 		</h4>

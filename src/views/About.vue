@@ -4,38 +4,32 @@
 		'hiding': isHiding
 	}]">
 		<div class="about-inner">
-			<h2 class="title">{{ data.name }}</h2>
+			<h2 class="about-inner-title">{{ data.name }}</h2>
 			<img
 				:src="data.imageUrl"
 				:alt="data.name"
-				class="image"
+				class="about-inner-image"
 				loading="lazy"
 			>
 
-			<!-- .about-inner-wrapper -->
 			<div class="about-inner-wrapper">
-				<div class="overview">
+				<div class="about-inner-overview">
 					<p>{{ data.overview }}</p>
 				</div>
-
-				<!-- .column-row -->
-				<div class="column-row">
+				<div class="about-inner-column-row">
 					<about-skills
 						v-if="data.skills.length"
 						:list="data.skills"
-						class="column-left"
+						class="about-inner-column-left"
 					/>
 					<about-educations-and-work-experiences
 						v-if="data.educations.length || data.workExperiences.length"
 						:educations-list="data.educations"
 						:works-list="data.workExperiences"
-						class="column-right"
+						class="about-inner-column-right"
 					/>
 				</div>
-				<!-- end .column-row -->
-
 			</div>
-			<!-- end .about-inner-wrapper -->
 		</div>
 	</div>
 </template>

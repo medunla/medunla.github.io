@@ -1,31 +1,27 @@
 <template>
 	<div>
-		<template v-if="worksList.length">
-			<h3 class="content-title">Work Experience</h3>
-			<div class="box-shadow">
-				<about-work-experience-item
-					v-for="(works, index) in worksList"
-					:key="index"
-					:data="works"
-				/>
-			</div>
-
-			<template v-if="educationsList.length">
-				<br>
-				<br>
-			</template>
-		</template>
-
-		<template v-if="educationsList.length">
-			<h3 class="content-title">Education</h3>
-			<div class="box-shadow">
-				<about-education-item
-					v-for="(education, index) in educationsList"
-					:key="index"
-					:data="education"
-				/>
-			</div>
-		</template>
+		<section
+			v-if="worksList.length"
+			class="about-content-item"
+		>
+			<h3 class="about-content-item-title">Work Experience</h3>
+			<about-work-experience-item
+				v-for="(works, index) in worksList"
+				:key="index"
+				:data="works"
+			/>
+		</section>
+		<section
+			v-if="educationsList.length"
+			class="about-content-item"
+		>
+			<h3 class="about-content-item-title">Education</h3>
+			<about-education-item
+				v-for="(education, index) in educationsList"
+				:key="index"
+				:data="education"
+			/>
+		</section>
 	</div>
 </template>
 
