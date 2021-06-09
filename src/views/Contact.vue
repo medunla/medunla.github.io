@@ -4,9 +4,9 @@
 		'hiding': isHiding
 	}]">
 		<div class="contact-inner">
-			<h2 class="title">Please feel free to contact me</h2>
+			<h2 class="contact-inner-title">Please feel free to contact me</h2>
 			<div class="contact-inner-wrapper">
-				<div class="column-row">
+				<div class="contact-inner-column-row">
 					<contact-form />
 					<contact-social-media-list
 						v-if="socials.length"

@@ -1,23 +1,25 @@
 .contact-container {
 	@extend .other-container;
-
-	.morph-elements {
-		max-width: calc(100% - #{$page-gutter-with-element} );
-
-		@media (max-width: $mobile-break-point) {
-			max-width: calc(100% - #{$page-gutter-with-element-mobile} );
-		}
-
-		@media (max-width: $small-mobile-break-point) {
-			max-width: calc(100% - #{$page-gutter-with-element-small-mobile} );
-		}
-	}
 }
 
 .contact-inner {
 	@extend .other-container-inner;
 
-	.title {
+	// .contact-inner-wrapper
+	&-wrapper {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		padding-left: $inner-padding-left;
+		transition: padding-left 0.3s, padding-right 0.3s;
+
+		@media (max-width: $mobile-break-point) {
+			padding-left: $inner-padding-left-mobile;
+		}
+	}
+
+	// .contact-inner-title
+	&-title {
 		font-size: 5rem;
 		line-height: 1.1;
 		font-weight: 900;
@@ -47,7 +49,8 @@
 		}
 	}
 
-	.column-row {
+	// .contact-inner-column-row
+	&-column-row {
 		display: flex;
 		width: 100%;
 
@@ -55,55 +58,43 @@
 			flex-wrap: wrap;
 		}
 	}
+}
 
-	.contact-form {
-		width: 100%;
-		padding-right: 100px;
+.contact-form {
+	width: 100%;
+	padding-right: 100px;
 
-		@media (max-width: 1200px) {
-			padding-right: 0;
-		}
-
-		// FadeRight
-		@extend %transition-faderight-setup;
-
-		transition-delay: 0.6s;
-
-		.is-page-ready & {
-			@extend %transition-faderight-active;
-		}
+	@media (max-width: 1200px) {
+		padding-right: 0;
 	}
 
-	.social-lists {
-		width: 350px;
-		min-width: 350px;
-		margin-top: 15px;
+	// FadeRight
+	@extend %transition-faderight-setup;
 
-		@media (max-width: 1200px) {
-			width: 100%;
-			min-width: auto;
-			margin-top: 50px;
-		}
+	transition-delay: 0.6s;
 
-		// FadeLeft
-		@extend %transition-fadeleft-setup;
-
-		transition-delay: 0.7s;
-
-		.is-page-ready & {
-			@extend %transition-fadeleft-active;
-		}
+	.is-page-ready & {
+		@extend %transition-faderight-active;
 	}
 }
 
-.contact-inner-wrapper {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	padding-left: $inner-padding-left;
-	transition: padding-left 0.3s, padding-right 0.3s;
+.social-lists {
+	width: 350px;
+	min-width: 350px;
+	margin-top: 15px;
 
-	@media (max-width: $mobile-break-point) {
-		padding-left: $inner-padding-left-mobile;
+	@media (max-width: 1200px) {
+		width: 100%;
+		min-width: auto;
+		margin-top: 50px;
+	}
+
+	// FadeLeft
+	@extend %transition-fadeleft-setup;
+
+	transition-delay: 0.7s;
+
+	.is-page-ready & {
+		@extend %transition-fadeleft-active;
 	}
 }
