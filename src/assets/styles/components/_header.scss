@@ -83,12 +83,7 @@
 		top: $page-gutter;
 		transform: rotate(-90deg) translateX(-100%);
 		transform-origin: 0% 0%;
-		opacity: 0;
 		transition: opacity 1s, filter 0.5s;
-
-		&.is-show {
-			opacity: 1;
-		}
 	}
 
 	// .navigation-page-portfolio
