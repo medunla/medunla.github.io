@@ -9,14 +9,15 @@
 	transition: all 0.3s;
 	outline: none;
 	white-space: nowrap;
-    vertical-align: middle;
+	vertical-align: middle;
 	user-select: none;
-	
+
 	&:active,
 	&:focus {
 		outline: none;
 	}
 }
+
 .button-outline,
 .button.button-outline {
 	background-color: transparent;
@@ -24,18 +25,20 @@
 
 .button-blue {
 	@extend .button;
+
 	border-color: $color-blue;
 	background-color: $color-blue;
-	color: #ffffff;
-	
+	color: $color-white;
+
 	&:hover {
-		border-color: darken($color-blue, 5%);
-		background-color: darken($color-blue, 5%);		
+		border-color: $color-blue-darken;
+		background-color: $color-blue-darken;
 	}
 }
 
 .button-navigation-page-current {
 	@extend .button;
+
 	background-color: transparent;
 	border-color: transparent;
 	padding-left: 0;
@@ -43,23 +46,27 @@
 	text-transform: uppercase;
 	cursor: auto;
 }
+
 .button-navigation-page-portfolio {
 	@extend .button;
+
 	text-transform: uppercase;
-	box-shadow: 0 0 10px 0 rgba(0,0,0,0.16);
-	background-color: #ffffff;
+	box-shadow: 0 0 10px 0 $color-shadow;
+	background-color: $color-white;
 	transition: all 0.5s;
 
 	&:hover {
-		color: #ffffff;
+		color: $color-white;
 		background-color: $color-blue;
 	}
+
 	&.is-active {
-		color: #ffffff;
+		color: $color-white;
 		background-color: $color-blue;
-	}
-	&.is-active:hover {
-		border-color: darken($color-blue, 5%);
-		background-color: darken($color-blue, 5%);
+
+		&:hover {
+			border-color: $color-blue-darken;
+			background-color: $color-blue-darken;
+		}
 	}
 }

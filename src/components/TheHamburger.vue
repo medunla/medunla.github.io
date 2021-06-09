@@ -1,6 +1,6 @@
 <template>
 	<div
-		:class="['hamburger hamburger--elastic', {
+		:class="['hamburger hamburger-elastic', {
 			'is-active': isActive,
 			'is-change-color': isChangeColor
 		}]"

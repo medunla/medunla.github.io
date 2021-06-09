@@ -2,6 +2,7 @@ $font-size: 16px;
 
 $color-default: #666;
 $color-blue: #00b1ff;
+$color-blue-darken: darken($color-blue, 5%);
 $color-green: #71F6D7;
 $color-green-for-text: #43d4b2;
 $color-white: #fff;

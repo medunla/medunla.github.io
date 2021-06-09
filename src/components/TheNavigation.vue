@@ -1,7 +1,10 @@
 <template>
 	<nav class="navigation">
-		<div class="wrapper">
-			<ul v-if="navigations.length">
+		<div class="navigation-wrapper">
+			<ul
+				v-if="navigations.length"
+				class="navigation-list"
+			>
 				<li
 					v-for="(navigation, index) in navigations"
 					:key="index"
@@ -9,6 +12,7 @@
 					<router-link
 						:to="navigation.to"
 						exact-active-class="is-active"
+						class="navigation-list-item-link"
 						@click.native="handleChangePage"
 					>
 						<span>{{ navigation.label }}</span>

@@ -12,20 +12,25 @@
 	> * {
 		vertical-align: middle;
 	}
+
 	svg {
 		width: 55px;
 		height: 55px;
-		box-shadow: 0 0 15px 0 rgba(0,0,0,0.16);
+		box-shadow: 0 0 15px 0 $color-shadow;
 		border-radius: 50%;
+
 		> * {
 			transition: fill 0.5s;
-		}		
+		}
 	}
 
-	&:hover .close-button-bg {
-		fill: $color-blue;		
-	}
-	&:hover .close-button-icon {
-		fill: #ffffff;
+	&:hover {
+		.close-button-bg {
+			fill: $color-blue;
+		}
+
+		.close-button-icon {
+			fill: $color-white;
+		}
 	}
 }

@@ -1,6 +1,6 @@
 <template>
 	<div class="navigation-page-portfolio">
-		<div class="wrapper">
+		<div class="navigation-page-portfolio-wrapper">
 			<router-link
 				:to="{
 					name: 'portfolios'

@@ -6,22 +6,21 @@
 	bottom: 0;
 	overflow: hidden;
 	transition: filter 0.5s;
-}
 
-// New Version
-.morph-elements > svg {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 600px;
+	> svg {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 600px;
 
-	@media (min-width: 520px) {
-		width: 650px;
-	}
-	@media (min-width: 820px) {
-		width: 800px;
-	}
-	@media (min-width: 1070px) {
-		width: 950px;
+		@media (min-width: 520px) {
+			width: 650px;
+		}
+		@media (min-width: 820px) {
+			width: 800px;
+		}
+		@media (min-width: 1070px) {
+			width: 950px;
+		}
 	}
 }
