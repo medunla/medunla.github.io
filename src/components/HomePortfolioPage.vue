@@ -5,16 +5,16 @@
 	>
 		<div
 			v-swiper:portfolioSwiper="swiperOptions"
-			class="portfolio-lists"
+			class="portfolio-list"
 			@slide-change="handlePortfolioSwiperSlideChange"
 		>
 			<div class="swiper-wrapper">
 				<div
 					v-for="portfolio in portfolioData"
 					:key="portfolio.slug"
-					class="swiper-slide portfolio-list"
+					class="swiper-slide portfolio-list-item"
 				>
-					<h2>
+					<h2 class="portfolio-list-item-name">
 						<router-link :to="{
 							name: 'portfolioDetail',
 							params: {
