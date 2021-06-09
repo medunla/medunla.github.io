@@ -19,6 +19,27 @@
 	position: absolute;
 	z-index: 2;
 	bottom: $page-gutter;
+	cursor: pointer;
+
+	&:hover {
+		.icon-mouse-body {
+			fill: $color-blue;
+		}
+
+		.icon-mouse-label {
+			color: $color-blue;
+		}
+	}
+
+	// .icon-mouse-body
+	&-body {
+		transition: fill 0.5s;
+	}
+
+	// .icon-mouse-label
+	&-label {
+		transition: color 0.5s;
+	}
 
 	@media (max-width: $mobile-break-point) {
 		bottom: $page-gutter-mobile;
