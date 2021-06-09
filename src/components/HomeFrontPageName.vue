@@ -1,6 +1,6 @@
 <template>
-	<div class="wrapper">
-		<h1 class="name">
+	<div class="hero-text-wrapper">
+		<h1 class="hero-text-name">
 			<span>P</span>
 			<span>A</span>
 			<span>N</span>
@@ -11,7 +11,7 @@
 			<span>K</span>
 			<span>.</span>
 		</h1>
-		<h2 class="position">Front-end Engineer</h2>
+		<h2 class="hero-text-position">Front-end Engineer</h2>
 	</div>
 </template>
 

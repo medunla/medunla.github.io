@@ -1,5 +1,5 @@
 <template>
-	<div class="scroll-down">
+	<div class="icon-mouse">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 104 104"
@@ -13,7 +13,8 @@
 					/>
 					<path
 						fill="#666666"
-						d="M53.887,18.7a.9.9,0,0,0-.895.895V27.7a.9.9,0,0,0,1.79,0V19.6a.9.9,0,0,0-.9-.895Zm0,0" transform="translate(-37.888 -13.333)"
+						d="M53.887,18.7a.9.9,0,0,0-.895.895V27.7a.9.9,0,0,0,1.79,0V19.6a.9.9,0,0,0-.9-.895Zm0,0"
+						transform="translate(-37.888 -13.333)"
 					>
 						<animateTransform
 							id="mouse_hover"
@@ -76,7 +77,7 @@
 				</g>
 			</g>
 		</svg>
-		<span class="text">Scroll Down</span>
+		<span>Scroll Down</span>
 	</div>
 </template>
 
