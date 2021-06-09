@@ -4,6 +4,7 @@
 		'hiding': isHiding
 	}">
 		<div
+			ref="homeSwiper"
 			v-swiper:homeSwiper="swiperOptions"
 			:style="cssWindowSize"
 			class="full-page"
@@ -40,10 +41,9 @@ export default {
 			swiperOptions: {
 				direction: "vertical",
 				speed: 1000,
-				mousewheel: true,
-				keyboard: true,
 				allowSlidePrev: false,
 				allowTouchMove: false
+				// NOTE: option mousewheel = true and keyboard = true not working
 			}
 		};
 	},
@@ -65,6 +65,12 @@ export default {
 		setTimeout(() => {
 			this.isPageReady = true;
 		}, 100);
+
+		this.$refs.homeSwiper.addEventListener("wheel", this.handleOnWheel, true);
+		document.onkeydown = this.handleOnKeypress;
+	},
+	destroyed() {
+		document.onkeydown = null;
 	},
 	methods: {
 		handleHomeSwiperSlideChange() {
@@ -78,13 +84,27 @@ export default {
 				case 1: {
 					this.homeSwiper.allowSlidePrev = false;
 					this.homeSwiper.allowSlideNext = false;
-					// this.setCurrentPage(pageList.PORTFOLIOS.key); // In-case change slide with drag
 					break;
 				}
 
 				default: {
 					break;
 				}
+			}
+		},
+		handleOnWheel(event) {
+			// NOTE: event.deltaY === 100 is wheel down
+			if (this.$route.name === "home" && event.deltaY === 100) {
+				this.$router.push({
+					name: "portfolios"
+				});
+			}
+		},
+		handleOnKeypress(event) {
+			if (this.$route.name === "home" && event?.keyCode === 40) {
+				this.$router.push({
+					name: "portfolios"
+				});
 			}
 		}
 	},
