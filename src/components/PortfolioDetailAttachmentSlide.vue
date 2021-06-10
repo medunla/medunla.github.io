@@ -28,6 +28,14 @@ export default {
 		PortfolioDetailAttachmentSlideItem
 	},
 	data() {
+		const swiperOptionNotAllow = this.attachments.length === 1
+			? {
+				allowSlideNext: false,
+				allowSlidePrev: false,
+				grabCursor: false
+			}
+			: {};
+
 		return {
 			swiperOptions: {
 				mousewheel: false,
@@ -35,7 +43,8 @@ export default {
 				grabCursor: true,
 				slidesPerView: "auto",
 				autoHeight: true,
-				centeredSlides: true
+				centeredSlides: true,
+				...swiperOptionNotAllow
 			}
 		};
 	}

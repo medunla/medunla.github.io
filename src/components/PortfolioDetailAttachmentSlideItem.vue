@@ -14,6 +14,7 @@
 			<img
 				:src="attachment.url"
 				:alt="attachment.alt"
+				loading="lazy"
 			/>
 			<p v-if="attachment.caption">{{ attachment.caption }}</p>
 		</template>
