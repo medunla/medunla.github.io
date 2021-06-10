@@ -46,6 +46,11 @@
 				transform: translate(-50%,-50%);
 				max-width: 100%;
 				max-height: 100%;
+
+				@media (max-width: $mobile-break-point) {
+					max-width: 80%;
+					max-height: 80%;
+				}
 			}
 		}
 
@@ -53,7 +58,12 @@
 		&-name {
 			margin-top: 20px;
 			margin-bottom: 0;
+			line-height: 1.2;
 			text-align: center;
+
+			@media (max-width: $mobile-break-point) {
+				margin-top: 0;
+			}
 		}
 	}
 }
