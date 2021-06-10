@@ -9,8 +9,9 @@
 			:style="cssWindowSize"
 			class="full-page"
 			@slide-change="handleHomeSwiperSlideChange"
+			@slider-move="handleHomeSwiperSlideMove"
 		>
-			<div class="swiper-wrapper main-container-swiper-wrapper">
+			<div class="swiper-wrapper main-container-swiper-wrapper will-change-transform">
 				<div class="swiper-slide">
 					<home-front-page />
 				</div>
@@ -48,9 +49,15 @@ export default {
 				direction: "vertical",
 				speed: 1000,
 				allowSlidePrev: false,
-				allowTouchMove: false
+				allowTouchMove: true,
+				breakpoints: {
+					1024: {
+						allowTouchMove: false
+					}
+				}
 				// NOTE: option mousewheel = true and keyboard = true not working
-			}
+			},
+			isHomeSwiperTouchMove: false
 		};
 	},
 	computed: {
@@ -90,6 +97,14 @@ export default {
 				case 1: {
 					this.homeSwiper.allowSlidePrev = false;
 					this.homeSwiper.allowSlideNext = false;
+
+					// In-case change slide with touch move/drag
+					if (this.isHomeSwiperTouchMove) {
+						this.isHomeSwiperTouchMove = false;
+						this.$router.push({
+							name: NAVIGATION_PORTFOLIOS.name
+						});
+					}
 					break;
 				}
 
@@ -111,6 +126,11 @@ export default {
 				this.$router.push({
 					name: NAVIGATION_PORTFOLIOS.name
 				});
+			}
+		},
+		handleHomeSwiperSlideMove() {
+			if (!this.isHomeSwiperTouchMove) {
+				this.isHomeSwiperTouchMove = true;
 			}
 		}
 	},

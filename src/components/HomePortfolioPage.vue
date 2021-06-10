@@ -8,7 +8,7 @@
 			class="portfolio-list"
 			@slide-change="handlePortfolioSwiperSlideChange"
 		>
-			<div class="swiper-wrapper">
+			<div class="swiper-wrapper will-change-transform">
 				<div
 					v-for="portfolio in portfolioData"
 					:key="portfolio.slug"
