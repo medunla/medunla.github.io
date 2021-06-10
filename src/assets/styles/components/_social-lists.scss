@@ -1,0 +1,35 @@
+.social-lists {
+	@extend .ul-pretty;
+
+	@media (max-width: 400px) {
+		text-align: center;
+	}
+
+	li {
+		display: block;
+		margin-bottom: 25px;
+
+		@media (max-width: 400px) {
+			display: inline-block;
+		}
+	}
+	img {
+		width: 40px;
+		height: 40px;
+		margin-right: 20px;
+		vertical-align: middle;
+
+		@media (max-width: 400px) {
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	span {
+		vertical-align: middle;
+
+		@media (max-width: 400px) {
+			display: none;
+		}
+	}
+}

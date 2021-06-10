@@ -1,0 +1,127 @@
+html {
+	font-size: $font-size;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	color: $color-default;
+	line-height: 1.7;
+}
+
+h1 {
+	font-size: 7rem;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.hiding {
+	animation: hiding 0.5s forwards;
+}
+
+.showing {
+	animation: showing 0.5s forwards;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
+}
+
+@keyframes hiding {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes showing {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.font-weight-normal {
+	font-weight: normal;
+}
+
+.is-blur {
+	filter: blur(10px);
+}
+
+.full-page {
+	width: 100vw;
+	height: 100vh;
+}
+
+.full-page-scroll-item {
+	overflow: hidden;
+}
+
+.main-container-swiper-wrapper {
+	transition-timing-function: ease-in-out;
+}
+
+.content {
+	transition: filter 0.5s;
+}
+
+.embed-responsive {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 0;
+	overflow: hidden;
+
+	&::before {
+		display: block;
+		content: "";
+	}
+
+	& {
+		// .embed-responsive-item
+		&-item,
+		embed,
+		iframe,
+		object,
+		video {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+	}
+
+	// .embed-responsive-16by9
+	&-16by9 {
+		::before {
+			padding-top: 56.25%;
+		}
+	}
+}

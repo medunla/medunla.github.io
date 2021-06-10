@@ -1,0 +1,26 @@
+.morph-elements {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	transition: filter 0.5s;
+
+	> svg {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 600px;
+
+		@media (min-width: 520px) {
+			width: 650px;
+		}
+		@media (min-width: 820px) {
+			width: 800px;
+		}
+		@media (min-width: 1070px) {
+			width: 950px;
+		}
+	}
+}

@@ -1,32 +1,43 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<the-header :class="{ 'is-page-ready': isPageReady }" />
+		<the-morph />
+		<div class="content">
+			<router-view />
+		</div>
+	</div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+	@import "./assets/styles/app";
 </style>
+
+<script>
+import TheHeader from "./components/TheHeader.vue";
+import TheMorph from "./components/TheMorph.vue";
+
+export default {
+	name: "App",
+	components: {
+		TheHeader,
+		TheMorph
+	},
+	data() {
+		return {
+			isPageReady: false
+		};
+	},
+	mounted() {
+		setTimeout(() => {
+			this.isPageReady = true;
+		}, 100);
+
+		this.getWindowSize(); // from mixin windowSize
+		window.addEventListener("resize", this.getWindowSize, true); // from mixin windowSize
+	},
+	destroyed() {
+		window.removeEventListener("resize", this.getWindowSize, true); // from mixin windowSize
+	}
+};
+</script>
+

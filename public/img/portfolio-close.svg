@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="609.333px" height="609.333px" viewBox="0 0 609.333 609.333" enable-background="new 0 0 609.333 609.333"
+	 xml:space="preserve">
+<circle id="circle_border" fill="#666666" cx="306" cy="304.667" r="304.667"/>
+<circle id="circle_bg" fill="#FFFFFF" cx="306" cy="304.667" r="287.167"/>
+<path id="icon" fill="#666666" d="M409.599,384.431l-95.526-85.041l95.526-85.161c2.67-2.252,3.01-6.241,0.758-8.911
+	c-0.23-0.274-0.484-0.528-0.758-0.758c-3.122-2.666-7.72-2.666-10.842,0l-94.09,83.88l-94.09-83.88
+	c-3.122-2.666-7.72-2.666-10.842,0c-0.274,0.23-0.528,0.484-0.758,0.758c-2.252,2.67-1.912,6.659,0.758,8.911l95.526,85.161
+	l-95.526,85.041c-0.274,0.23-0.528,0.484-0.758,0.758c-2.252,2.67-1.912,6.659,0.758,8.911c3.154,2.674,7.809,2.572,10.842-0.238
+	l94.09-83.88l94.09,83.88c3.034,2.81,7.688,2.912,10.842,0.238c2.67-2.252,3.01-6.241,0.758-8.911
+	C410.126,384.915,409.873,384.661,409.599,384.431z"/>
+<circle id="circle_for_hover" fill="#FFFFFF" fill-opacity="0" cx="306" cy="304.667" r="287.167"/>
+<animate  fill="freeze" restart="always" calcMode="linear" additive="replace" accumulate="none" begin="Layer_1.mouseover" dur="0.3s" to="#00b1ff" attributeName="fill" attributeType="CSS" xlink:href="#circle_border">
+	</animate>
+<animate  fill="freeze" restart="always" calcMode="linear" additive="replace" accumulate="none" begin="Layer_1.mouseover" dur="0.3s" to="#00b1ff" attributeName="fill" attributeType="CSS" xlink:href="#circle_bg">
+	</animate>
+<animate  fill="freeze" restart="always" calcMode="linear" additive="replace" accumulate="none" begin="Layer_1.mouseover" dur="0.3s" to="#ffffff" attributeName="fill" attributeType="CSS" xlink:href="#icon">
+	</animate>
+<animate  fill="freeze" restart="always" calcMode="linear" additive="replace" accumulate="none" begin="Layer_1.mouseout" dur="0.3s" to="#666666" attributeName="fill" attributeType="CSS" xlink:href="#circle_border">
+	</animate>
+<animate  fill="freeze" restart="always" calcMode="linear" additive="replace" accumulate="none" begin="Layer_1.mouseout" dur="0.3s" to="#ffffff" attributeName="fill" attributeType="CSS" xlink:href="#circle_bg">
+	</animate>
+<animate  fill="freeze" restart="always" calcMode="linear" additive="replace" accumulate="none" begin="Layer_1.mouseout" dur="0.3s" to="#666666" attributeName="fill" attributeType="CSS" xlink:href="#icon">
+	</animate>
+</svg>
