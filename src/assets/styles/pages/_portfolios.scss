@@ -48,7 +48,7 @@
 
 		&:first-child {
 			.portfolio-list-item-name {
-				padding-top: 30px;
+				margin-top: 30px;
 			}
 		}
 
@@ -59,7 +59,7 @@
 			font-weight: 900;
 			letter-spacing: 6px;
 			line-height: 1;
-			padding-bottom: 50px;
+			margin-bottom: 50px;
 			text-transform: uppercase;
 			cursor: pointer;
 			transition: all 0.1s;
@@ -72,10 +72,19 @@
 				font-size: 3rem;
 			}
 
+			@media (max-width: $tiny-mobile-break-point) {
+				font-size: 2.5rem;
+				margin-bottom: 36px;
+			}
+
 			a:hover {
 				color: $color-blue;
 				letter-spacing: 10px;
 				text-shadow: 0 0 10px $color-shadow;
+
+				@media (max-width: $mobile-break-point) {
+					letter-spacing: 6px;
+				}
 			}
 		}
 	}

@@ -50,6 +50,10 @@
 				font-size: 3rem;
 			}
 
+			@media (max-width: $tiny-mobile-break-point) {
+				font-size: 2.5rem;
+			}
+
 			&:link,
 			&:visited {
 				color: $color-white;
@@ -61,6 +65,10 @@
 			&:active {
 				letter-spacing: 10px;
 				color: $color-blue;
+
+				@media (max-width: $mobile-break-point) {
+					letter-spacing: 6px;
+				}
 			}
 		}
 	}
