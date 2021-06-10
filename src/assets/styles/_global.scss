@@ -68,10 +68,6 @@ h1 {
 	font-weight: normal;
 }
 
-.is-blur {
-	filter: blur(10px);
-}
-
 .full-page {
 	width: 100vw;
 	height: 100vh;
@@ -120,7 +116,7 @@ h1 {
 
 	// .embed-responsive-16by9
 	&-16by9 {
-		::before {
+		&::before {
 			padding-top: 56.25%;
 		}
 	}
