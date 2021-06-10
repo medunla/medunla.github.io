@@ -73,20 +73,24 @@
 		cursor: default;
 		letter-spacing: 6px;
 
-		@media (max-width: 712px) {
-			font-size: 5.5rem;
+		@media (max-width: $mobile-break-point) {
+			font-size: 4.5rem;
 		}
 
-		@media (max-width: 603px) {
+		@media (max-width: 768px) {
 			font-size: 4rem;
 		}
 
-		@media (max-width: 470px) {
+		@media (max-width: 680px) {
+			font-size: 3.5rem;
+		}
+
+		@media (max-width: 530px) {
 			font-size: 3rem;
 		}
 
-		@media (max-width: 370px) {
-			font-size: 2.4rem;
+		@media (max-width: 400px) {
+			font-size: 2rem;
 		}
 
 		// FadeUp
@@ -101,9 +105,14 @@
 			display: inline-block;
 			text-shadow: 0 0 10px $color-shadow;
 			margin: 0 10px;
+			will-change: transform;
 			animation-timing-function: linear;
 			animation-direction: alternate;
 			animation-iteration-count: infinite;
+
+			@media (max-width: 680px) {
+				margin: 0 4px;
+			}
 
 			&:nth-child(4n+1) {
 				animation-name: front-name-animate-reverse;
@@ -127,6 +136,14 @@
 				animation-name: front-name-animate;
 				animation-duration: 19s;
 				animation-delay: 3.5s;
+			}
+
+			&.has-space {
+				margin-right: 36px;
+
+				@media (max-width: 680px) {
+					margin-right: 20px;
+				}
 			}
 		}
 	}

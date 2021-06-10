@@ -7,7 +7,7 @@
 			<span>U</span>
 			<span>P</span>
 			<span>A</span>
-			<span>T</span>
+			<span class="has-space">T</span>
 			<span>K</span>
 			<span>.</span>
 		</h1>

@@ -85,6 +85,14 @@ h1 {
 	transition: filter 0.5s;
 }
 
+.will-change-auto {
+	will-change: auto;
+}
+
+.will-change-transform {
+	will-change: transform;
+}
+
 .embed-responsive {
 	position: relative;
 	display: block;
