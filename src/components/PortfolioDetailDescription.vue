@@ -24,6 +24,7 @@
 						<a
 							:href="demo.url"
 							:title="demo.url"
+							rel="noopener noreferrer nofollow"
 							target="_blank"
 						>
 							Link{{ portfolio.demos.length > 1 ? ` ${index+1}` : '' }}
@@ -35,6 +36,7 @@
 					<a
 						:href="portfolio.app_stores.app_store"
 						:title="portfolio.app_stores.app_store"
+						rel="noopener noreferrer nofollow"
 						target="_blank"
 					>
 						Link
@@ -45,6 +47,7 @@
 					<a
 						:href="portfolio.app_stores.play_store"
 						:title="portfolio.app_stores.play_store"
+						rel="noopener noreferrer nofollow"
 						target="_blank"
 					>
 						Link

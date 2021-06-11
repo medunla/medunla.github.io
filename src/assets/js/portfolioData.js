@@ -1,5 +1,107 @@
 export default [
 	{
+		slug: "born-innovation",
+		name: "Born innovation",
+		description: "Company website for showing products from Born Innovation Co.Ltd.,. The requirement is how to present the product, should be easy to understand the product attributes and able to compare to other products in same category.",
+		images: [
+			{
+				url: "https://pogaam.com/wp-content/uploads/2021/04/born-home.jpeg",
+				alt: "Born innovation - Home page",
+				caption: "Home page",
+			},
+			{
+				url: "https://pogaam.com/wp-content/uploads/2021/04/born-product.jpeg",
+				alt: "Born innovation - Product page",
+				caption: "Product page",
+			},
+		],
+		categories: [
+			{
+				name: "Website",
+			},
+			{
+				name: "Frontend",
+			},
+			{
+				name: "Backend",
+			},
+			{
+				name: "Wordpress",
+			},
+		],
+		client: "Born Innovation Co.Ltd.,",
+		demos: [
+			{
+				url: "https://borninnovation.com/",
+			},
+		],
+		app_stores: {
+			app_store: "",
+			play_store: "",
+		},
+	},
+	{
+		slug: "ignite-by-ondemand",
+		name: "ignite by Ondemand",
+		description: "",
+		images: [
+			{
+				url: "https://pogaam.com/wp-content/uploads/2021/04/ignite-home.jpeg",
+				alt: "ignite by Ondemand - Home page",
+				caption: "Home page",
+			},
+			{
+				url: "https://pogaam.com/wp-content/uploads/2021/04/ignite-course.jpeg",
+				alt: "ignite by Ondemand - Course page",
+				caption: "Course page",
+			},
+			{
+				url: "https://pogaam.com/wp-content/uploads/2021/04/ignite-platform.jpeg",
+				alt: "ignite by Ondemand - Platform page",
+				caption: "Platform page",
+			},
+			{
+				url: "https://pogaam.com/wp-content/uploads/2021/04/ignite-blog-list.jpeg",
+				alt: "ignite by Ondemand - Blogs page",
+				caption: "Blogs page",
+			},
+			{
+				url: "https://pogaam.com/wp-content/uploads/2021/04/ignite-article.jpeg",
+				alt: "ignite by Ondemand - Article page",
+				caption: "Article page",
+			},
+			{
+				url: "https://pogaam.com/wp-content/uploads/2021/04/ignite-article.jpeg",
+				alt: "ignite by Ondemand - Article page",
+				caption: "Article page",
+			},
+		],
+		categories: [
+			{
+				name: "Website",
+			},
+			{
+				name: "Frontend",
+			},
+			{
+				name: "Backend",
+			},
+			{
+				name: "Wordpress",
+			},
+		],
+		client: "	ignite by Ondemand",
+		demos: [
+			{
+				url: "https://www.ignitebyondemand.com/",
+			},
+		],
+		app_stores: {
+			app_store: "",
+			play_store: "",
+		},
+	},
+	{
 		slug: "packcreat-8",
 		name: "Packcreat8",
 		description: "Website showcase for Packcreat8 agency. This website build with wordpress theme.",
