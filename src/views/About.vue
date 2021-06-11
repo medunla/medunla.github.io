@@ -84,7 +84,8 @@ export default {
 							"Code quality control to ensure ease of maintenance and a focus on good performance",
 							"Create and build the product management system platform with microservices architecture",
 							"Create and build a product browser platform for customer and sales",
-							"Create and build the backoffice of e-commerce platform"
+							"Create and build the backoffice of e-commerce platform",
+							"Create and build the insurance website and in-app website"
 						]
 					},
 					{
