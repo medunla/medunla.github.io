@@ -1,5 +1,7 @@
 .contact-container {
 	@extend .other-container;
+
+	content-visibility: auto;
 }
 
 .contact-inner {

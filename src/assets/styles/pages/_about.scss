@@ -1,5 +1,7 @@
 .about-container {
 	@extend .other-container;
+
+	content-visibility: auto;
 }
 
 .about-inner {

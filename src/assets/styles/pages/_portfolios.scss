@@ -2,6 +2,7 @@
 	padding-top: $page-gutter + 20;
 	padding-bottom: $page-gutter + 20;
 	position: relative;
+	content-visibility: auto;
 
 	&::before,
 	&::after {

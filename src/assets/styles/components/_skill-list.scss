@@ -34,6 +34,7 @@
 		padding-right: 15px;
 		margin-bottom: 30px;
 		transition: width 0.3s;
+		content-visibility: auto;
 
 		@media (max-width: 1330px) and (min-width: 1201px) {
 			width: 33.3333333%;
