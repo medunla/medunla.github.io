@@ -1,10 +1,10 @@
 <template>
 	<div class="about-content-item-content">
 		<h4
-			v-if="data.year"
+			v-if="yearLabel"
 			class="about-content-item-content-time color-blue"
 		>
-			{{ data.year }}
+			{{ yearLabel }}<span v-if="yearAmount" class="about-content-item-content-time-amount">{{ yearAmount }}</span>
 		</h4>
 		<h4
 			v-if="data.positionName"
@@ -37,6 +37,57 @@ export default {
 		data: {
 			type: Object,
 			default: () => ({})
+		}
+	},
+	computed: {
+		yearLabel() {
+			const {
+				start,
+				end
+			} = this.data.year || {};
+
+			if (start) {
+				const endLabel = end || "Present";
+				return `${start} - ${endLabel}`;
+			}
+			return null;
+		},
+		yearAmount() {
+			const {
+				start,
+				end
+			} = this.data.year || {};
+
+			if (start) {
+				const startDate = new Date(start);
+				const endDate = end
+					? new Date(end)
+					: new Date();
+				const diffMounths = endDate.getMonth() - startDate.getMonth() + (12 * (endDate.getFullYear() - startDate.getFullYear()));
+				const year = Math.floor((diffMounths / 12));
+				const month = diffMounths - (year * 12);
+
+				let yearLabel = "";
+				if (year > 1) {
+					yearLabel = `${year} years`;
+				} else if (year === 1) {
+					yearLabel = `${year} year`;
+				}
+
+				let monthLabel = "";
+				if (month > 1) {
+					monthLabel = `${month} months`;
+				} else if (month === 1) {
+					monthLabel = `${month} month`;
+				}
+
+				const joiner = yearLabel && monthLabel
+					? " "
+					: "";
+
+				return `${yearLabel}${joiner}${monthLabel}`;
+			}
+			return null;
 		}
 	}
 };

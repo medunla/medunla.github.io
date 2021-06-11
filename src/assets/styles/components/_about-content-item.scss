@@ -48,6 +48,14 @@
 			line-height: 1.2;
 			font-weight: bold;
 			margin-bottom: 15px;
+
+			// .about-content-item-content-time-amount
+			&-amount {
+				font-size: 0.75em;
+				color: $color-gray-ligthen;
+				font-weight: normal;
+				margin-left: 6px;
+			}
 		}
 
 		// .about-content-item-content-name
