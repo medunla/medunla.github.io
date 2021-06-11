@@ -7,6 +7,25 @@
 	margin-right: -15px;
 	margin-bottom: -30px;
 
+	// .skill-list-wrapper
+	&-wrapper {
+		&:not(:last-child) {
+			margin-bottom: 60px;
+		}
+	}
+
+	// .skill-list-title
+	&-title {
+		font-size: 1.25rem;
+		line-height: 1.2;
+		font-weight: bold;
+		margin-bottom: 24px;
+
+		@media (max-width: $mobile-break-point) {
+			margin-bottom: 16px;
+		}
+	}
+
 	// .skill-list-item
 	&-item {
 		display: block;
@@ -15,6 +34,7 @@
 		padding-right: 15px;
 		margin-bottom: 30px;
 		transition: width 0.3s;
+		content-visibility: auto;
 
 		@media (max-width: 1330px) and (min-width: 1201px) {
 			width: 33.3333333%;

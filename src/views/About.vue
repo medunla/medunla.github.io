@@ -63,7 +63,7 @@ export default {
 			data: {
 				name: "Panupat Kammahawong",
 				imageUrl: "img/panupat-image.jpg",
-				overview: `I have experience about web development for ${experienceYears} years. My main abilities is HTML, CSS/SCSS, Javascript, jQuery in front-end position and I can do backend position too with Wordpress, Ruby on Rails, Laravel. Other abilities related to web development are SEO(website structure), Progressive Web App, basic UI and Git for work with other developer.`,
+				overview: `I am a Front-end engineer with over ${experienceYears} years of experience. I am passionate about making beautiful UI and animations. My main abilities are HTML, CSS/SCSS, Javascript or build the website with Vue.js framework, My secondary abilities are in the back-end part such as PHP, MySQL and build website with Workpress, Laravel, Ruby on Rails framworks.`,
 				skills: skillsData,
 				educations: [
 					{
@@ -76,7 +76,10 @@ export default {
 				],
 				workExperiences: [
 					{
-						year: "Apr 2019 - Present",
+						year: {
+							start: "Apr 2019",
+							end: null
+						},
 						positionName: "Front-End Engineer",
 						companyName: "MAQE Co., Ltd.",
 						details: [
@@ -84,11 +87,15 @@ export default {
 							"Code quality control to ensure ease of maintenance and a focus on good performance",
 							"Create and build the product management system platform with microservices architecture",
 							"Create and build a product browser platform for customer and sales",
-							"Create and build the backoffice of e-commerce platform"
+							"Create and build the backoffice of e-commerce platform",
+							"Create and build the insurance website and in-app website"
 						]
 					},
 					{
-						year: "Nov 2015 - Mar 2019",
+						year: {
+							start: "Nov 2015",
+							end: "Mar 2019"
+						},
 						positionName: "Web Developer",
 						companyName: "Backtobasics Design Co., Ltd.",
 						details: [
