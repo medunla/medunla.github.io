@@ -44,10 +44,18 @@ export default {
 				},
 				{
 					name: "linkedin.com/in/panupat-kammahawong",
-					url: "https://www.linkedin.com/in/panupat-kammahawong-820551115/",
+					url: "https://www.linkedin.com/in/panupat-kammahawong/",
 					icon: {
 						src: "img/social/linkedin.svg",
 						alt: "LinkedIn"
+					}
+				},
+				{
+					name: "panupatnew.medium.com",
+					url: "https://panupatnew.medium.com/",
+					icon: {
+						src: "img/social/medium.svg",
+						alt: "Medium"
 					}
 				},
 				{
