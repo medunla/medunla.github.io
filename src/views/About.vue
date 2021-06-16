@@ -63,7 +63,7 @@ export default {
 			data: {
 				name: "Panupat Kammahawong",
 				imageUrl: "img/panupat-image.jpg",
-				overview: `I am a Front-end engineer with over ${experienceYears} years of experience. I am passionate about making beautiful UI and animations. My main abilities are HTML, CSS/SCSS, Javascript or build the website with Vue.js framework, My secondary abilities are in the back-end part such as PHP, MySQL and build website with Workpress, Laravel, Ruby on Rails framworks.`,
+				overview: `I am a Front-end engineer with over ${experienceYears} years of experience. I am passionate about making beautiful UI and animations. My main abilities are HTML, CSS/SCSS, Javascript or build the website with Vue.js framework, My secondary abilities are in the back-end part such as PHP, MySQL and build a website with WordPress, Laravel, Ruby on Rails frameworks.`,
 				skills: skillsData,
 				educations: [
 					{
@@ -84,10 +84,10 @@ export default {
 						companyName: "MAQE Co., Ltd.",
 						details: [
 							"Create and build the front-end section of a website",
-							"Code quality control to ensure ease of maintenance and a focus on good performance",
+							"Code quality control to ensure ease of maintenance and focus on a good performance",
 							"Create and build the product management system platform with microservices architecture",
-							"Create and build a product browser platform for customer and sales",
-							"Create and build the backoffice of e-commerce platform",
+							"Create and build the product browser platform for customer and sales",
+							"Create and build the back-office e-commerce platform",
 							"Create and build the insurance website and in-app website"
 						]
 					},
@@ -100,9 +100,9 @@ export default {
 						companyName: "Backtobasics Design Co., Ltd.",
 						details: [
 							"Developed own platforms as a startup with Ruby on Rails and Laravel framework",
-							"Front-end",
-							"Back-end with Wordpress",
-							"Improve and maintenance fulfilment platform provides storing, packing, shipping service for the customer"
+							"Front-end (HTML, CSS, SCSS, JavaScript, jQuery)",
+							"Back-end with WordPress",
+							"Improve and maintenance fulfillment platform provides storing, packing, shipping service for the customer"
 						]
 					}
 				]
