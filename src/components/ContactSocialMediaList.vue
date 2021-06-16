@@ -8,6 +8,7 @@
 				:href="social.url"
 				:title="social.name"
 				target="_blank"
+				rel="noopener"
 			>
 				<img
 					v-if="social.icon && social.icon.src"
