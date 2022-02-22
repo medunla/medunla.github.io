@@ -11,7 +11,7 @@ export default [
 				image: "img/skill/css3.svg",
 			},
 			{
-				name: "Javascript",
+				name: "JavaScript",
 				image: "img/skill/javascript.svg",
 			},
 			{

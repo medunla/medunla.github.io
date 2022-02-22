@@ -40,7 +40,13 @@
 
 		// .about-content-item-content + .about-content-item-content
 		& + & {
-			margin-top: 40px;
+			&:not(.is-continue) {
+				margin-top: 40px;
+			}
+
+			&.is-continue {
+				margin-top: 8px;
+			}
 		}
 
 		// .about-content-item-content-time
@@ -71,12 +77,22 @@
 			list-style: circle;
 			padding-left: 18px;
 
+			// Depth lv2
+			.about-content-item-content-detail-list {
+				margin-top: 4px;
+			}
+
 			// .about-content-item-content-detail-list-item
 			&-item {
 				line-height: 1.4;
 
 				&:not(:last-child) {
 					margin-bottom: 10px;
+				}
+
+				// Depth lv2
+				.about-content-item-content-detail-list-item:not(:last-child) {
+					margin-bottom: 4px;
 				}
 			}
 		}

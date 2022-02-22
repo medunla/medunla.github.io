@@ -1,5 +1,5 @@
 <template>
-	<div class="about-content-item-content">
+	<div :class="['about-content-item-content', { 'is-continue': data.isContinue }]">
 		<h4
 			v-if="yearLabel"
 			class="about-content-item-content-time color-blue"
@@ -24,7 +24,22 @@
 				:key="index"
 				class="about-content-item-content-detail-list-item"
 			>
-				{{ item }}
+				<template v-if="typeof item === 'string'">{{ item }}</template>
+				<template v-else>
+					{{ item.text || '' }}
+					<ul
+						v-if="item.children && item.children.length"
+						class="about-content-item-content-detail-list"
+					>
+						<li
+							v-for="(childrenItem, childrenIndex) in item.children"
+							:key="childrenIndex"
+							class="about-content-item-content-detail-list-item"
+						>
+							{{ childrenItem }}
+						</li>
+					</ul>
+				</template>
 			</li>
 		</ul>
 	</div>

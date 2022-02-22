@@ -63,7 +63,7 @@ export default {
 			data: {
 				name: "Panupat Kammahawong",
 				imageUrl: "img/panupat-image.jpg",
-				overview: `I am a Front-end engineer with over ${experienceYears} years of experience. I am passionate about making beautiful UI and animations. My main abilities are HTML, CSS/SCSS, Javascript or build the website with Vue.js framework, My secondary abilities are in the back-end part such as PHP, MySQL and build a website with WordPress, Laravel, Ruby on Rails frameworks.`,
+				overview: `I have over ${experienceYears} years of expertise as a front-end developer. I'm highly interested in creating outstanding UI and transition animations. I'm an expert in HTML, CSS/SCSS, JavaScript, and the Vue.js framework. The website that I have experience with are E-commerce both in storefront and back-office, Product management systems, Product browsers for customers and sales, and Insurance websites.`,
 				skills: skillsData,
 				educations: [
 					{
@@ -77,19 +77,38 @@ export default {
 				workExperiences: [
 					{
 						year: {
-							start: "Apr 2019",
+							start: "Nov 2021",
 							end: null
+						},
+						positionName: "Senior Front-End Engineer",
+						companyName: "MAQE Co., Ltd."
+					},
+					{
+						year: {
+							start: "Apr 2019",
+							end: "Oct 2021"
 						},
 						positionName: "Front-End Engineer",
 						companyName: "MAQE Co., Ltd.",
 						details: [
-							"Create and build the front-end section of a website",
-							"Code quality control to ensure ease of maintenance and focus on a good performance",
-							"Create and build the product management system platform with microservices architecture",
-							"Create and build the product browser platform for customer and sales",
-							"Create and build the back-office e-commerce platform",
-							"Create and build the insurance website and in-app website"
-						]
+							{
+								text: "Create and develop the website",
+								children: [
+									"E-commerce",
+									"Back-office for E-commerce",
+									"Product management system with microservices architecture",
+									"Product browser for customers and sales",
+									"Insurance"
+								]
+							},
+							"Controlling the quality of the code to ensure that it is easy to maintain and perform well",
+							"Collaborate with the designer, back-end, and QA",
+							"Technical possibility of UX and UI concepts",
+							"Lead front-end team in the project",
+							"Estimate tasks and assign them to front-end members",
+							"Advise junior developers"
+						],
+						isContinue: true
 					},
 					{
 						year: {
@@ -99,10 +118,10 @@ export default {
 						positionName: "Web Developer",
 						companyName: "Backtobasics Design Co., Ltd.",
 						details: [
-							"Developed own platforms as a startup with Ruby on Rails and Laravel framework",
-							"Front-end (HTML, CSS, SCSS, JavaScript, jQuery)",
-							"Back-end with WordPress",
-							"Improve and maintenance fulfillment platform provides storing, packing, shipping service for the customer"
+							"Create and develop the website with WordPress",
+							"Created own platforms as a startup with Ruby on Rails and Laravel)",
+							"Improved and maintenance the fulfillment platform provides storing, packing, and shipping service for the customer",
+							"Work closely with CEO"
 						]
 					}
 				]
